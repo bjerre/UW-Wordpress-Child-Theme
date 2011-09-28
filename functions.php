@@ -30,6 +30,7 @@ add_action('wp_print_styles', 'add_additional_css');
 function add_additional_css() {
     $cssfiles = array(
       //'NAME OF FILE' => 'FILENAME ISTELF',
+      'bootstrap' => 'bootstrap.min.css',
       'twentyeleven' => 'twentyeleven.css',
       'header' => 'header.css',
       'footer' => 'footer.css',

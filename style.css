@@ -12,6 +12,9 @@ Version:        0.1.0
 body {
   font-size:12px;
 }
+.container {
+  width: 950px
+}
 #leftNav h2, #rightInfo h2 {
 	font-size: 14px;
 }
