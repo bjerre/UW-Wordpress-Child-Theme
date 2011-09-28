@@ -12,12 +12,27 @@ Version:        0.1.0
 body {
   font-size:12px;
 }
-
-line-height: 1.5;
 #leftNav h2, #rightInfo h2 {
 	font-size: 14px;
 }
 
+/* override twentyeleven css */
+#primary {
+  float: left;
+  margin: 0 -25% 0 0;
+  width: 45%;
+}
+#content {
+  margin: 0;
+  width: 100%;
+}
+
+/* Begin UW Theme CSS */
+#leftnav {
+  width: 230px;
+  float: left;
+  margin-right: 10px;
+}
 #searchform {
 	margin-bottom: 20px;
 }
