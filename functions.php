@@ -3,11 +3,36 @@
 define( 'HEADER_IMAGE_WIDTH', apply_filters( 'twentyeleven_header_image_width', 874 ) );
 define( 'HEADER_IMAGE_HEIGHT', apply_filters( 'twentyeleven_header_image_height', 85 ) );
 
-add_action('wp_print_styles', 'add_additional_css');
+function uw_theme_setup() {
 
+$template_uri = get_stylesheet_directory_uri();
+register_default_headers( array(
+  'huskypromise' => array(
+    'url' => "$template_uri/images/banners/banner.jpg",
+    'thumbnail_url' => "$template_uri/images/banners/banner-thumb.jpg",
+    /* translators: header image description */
+    'description' => __( 'Husky Promise', 'uw_theme' )
+  )
+));
+
+unregister_default_headers( array('wheel','shore','trolley','pine-cone','chessboard','lanterns','willow','hanoi'));
+
+}
+add_action( 'after_setup_theme', 'uw_theme_setup', 11 );
+
+
+
+/**
+ * Adds the css files for that are needed on each page 
+ *
+ */
+add_action('wp_print_styles', 'add_additional_css');
 function add_additional_css() {
     $cssfiles = array(
+      //'NAME OF FILE' => 'FILENAME ISTELF',
+      'twentyeleven' => 'twentyeleven.css',
       'header' => 'header.css',
+      'footer' => 'footer.css',
       'secondary' => 'secondary.css'
     );
     foreach ($cssfiles as $name => $file) {
@@ -17,82 +42,60 @@ function add_additional_css() {
     }
 }
 
-function uw_header() { 
+/**
+ * Grabs the dropdown navigation off of http://uw.edu (UW Homepage)
+ * after a certain amount of time has passed and stores it in the database. 
+ *
+ * @return The navigation HTML
+ */ 
+if (!function_exists('get_uw_dropdowns')) {
+    function get_uw_dropdowns() {
 
-  include_once(ABSPATH . WPINC . '/feed.php');
-  // Get a SimplePie feed object from the specified feed source.
-  $rss = fetch_feed('http://www.atmos.washington.edu/rss/home.rss');
-  if (!is_wp_error( $rss ) ) { // Checks that the object is created correctly 
-    $maxitems = $rss->get_item_quantity(3); 
-    $rss_items = $rss->get_items(0, $maxitems);
+        // check if we need to update the dropdowns from the UW homepage
+        if(uw_dropdowns_need_updating()) {
+            update_uw_dropdowns();
+        } 
 
-    echo 'here';
-    foreach ( $rss_items as $item ) {
-      //$weatherItems[] = $item->get_title();
-      $info = explode('|', $item->get_title());
-      $weather[sanitize_key($info[0])] = substr($info[1],1);
+        // return the navigation HTML
+        $options = get_option('uw_theme_settings');
+        return $options['navigation'];
     }
-    
-    if (!empty($weather['temperature']) && $weather['icon'] !== '00') {
-    	// Set the weather to true
-    	$weather = true;
+}
+
+/**
+ * Echos out the navigation HTML
+ */ 
+if (!function_exists('uw_dropdowns')) {
+    function uw_dropdowns() {
+        echo get_uw_dropdowns();
     }
+}
 
-  }
-  
-?>
+if (!function_exists('update_uw_dropdowns')) {
+    function update_uw_dropdowns() {
+        // include the necessary functions to scrap the homepage
+        include_once('inc/simple_html_dom.php');
+        $navigation;
+        // gather the options for the theme
+        $options = get_option('uw_theme_settings');
+        $html = file_get_dom('http://www.washington.edu/');
+        $node = $html->find('#navg');
+        // create the html from the dom element;
+        foreach($node as $element) { 
+            $navigation .= $element->innertext;
+        }
+        // also save the current time the new html was saved into the database
+        $options['_updated'] = time();
+        // get the new html and save it to the database
+        $options['navigation'] = $navigation;
+        update_option('uw_theme_settings', $options);
+    }
+}
 
-<div class="wheader patchYes colorGold">	
-  <div id="autoMargin">
-  
-    <div class="wlogoSmall">
-      <div class="logoAbsolute"><a id="wlogoLink" href="http://www.washington.edu/">University of Washington</a></div>
-	</div>
-	<?php if ($weather == true) : ?>
-	<div id="weather">
-	  <a href="http://www.atmos.washington.edu/weather/forecast.shtml"><img src="http://www.washington.edu/static/image/weather/<?php echo $icon; ?>.png" width="32" height="32" alt="<?php echo $cond; ?>: <?php echo $temp; ?>" title="<?php echo $cond; ?>: <?php echo $temp; ?>" class="weather-icon" /></a>
-	  <div>
-	    <span class="weather-city"><a href="http://www.atmos.washington.edu/weather/forecast.shtml" title="Click for a detailed forecast">Seattle</a> <?php echo $temp; ?></span>
-	  </div>
-	</div>
-	<?php endif; ?>
-	<div id="wtext">
-    	<ul>
-      		<li><a href="http://www.washington.edu/">UW Home</a></li>
-        	<li><span class="border"><a href="http://www.washington.edu/home/directories.html">Directories</a></span></li>
-       	  	<li><span class="border"><a href="http://www.washington.edu/discover/visit/uw-events">Calendar</a></span></li>
-            <li><span class="border"><a href="http://www.lib.washington.edu/">Libraries</a></span></li>
-       	  	<li><span class="border"><a href="http://www.washington.edu/maps/">Maps</a></span></li>
-       	  	<li><span class="border margRight"><a href="http://myuw.washington.edu/">My UW</a></span></li>
-            <li><a href="http://www.uwb.edu/">UW Bothell</a></li>
-       	  	<li><span class="border"><a href="http://www.tacoma.washington.edu/">UW Tacoma</a></span></li>
-       </ul>
-   </div>
-    
-  </div>
-</div>
-
-<div id="visual-portal-wrapper">
-      <div id="bg">
-        <div id="header">  
-        
-        <span id="uwLogo"><a href="http://www.washington.edu/">University of Washington</a></span>	
-        
-        <div id="wsearch">
-                <form action="http://www.google.com/cse" id="searchbox_001967960132951597331:04hcho0_drk" name="uwglobalsearch">
-                  <div class="wfield">
-                    <input type="hidden" value="001967960132951597331:04hcho0_drk" name="cx" />
-                    <input type="hidden" value="FORID:0" name="cof" />
-                    <input type="text" class="wTextInput" value="Search the UW" title="Search the UW" name="q" />
-                  </div>
-                  <input type="submit" value="Go" name="sa" class="formbutton" />
-                </form>
-            </div>
-        
-        	
-        	<p class="tagline"><a href="http://www.washington.edu/discovery/washingtonway/"><span class="taglineGold">Discover what's next.</span> It's the Washington Way.</a></p>
-
-
-<?php
+if (!function_exists('uw_dropdowns_need_updating')) {
+    function uw_dropdowns_need_updating() {
+        $options = get_option('uw_theme_settings');
+        return (time() - $options['_nav_updated'] > $options['_nav_update_frequency']);
+    }
 }
 ?>

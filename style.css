@@ -8,6 +8,12 @@ Template:       twentyeleven
 Version:        0.1.0
 */
 
+/* override bootstrap */
+body {
+  font-size:12px;
+}
+
+line-height: 1.5;
 #leftNav h2, #rightInfo h2 {
 	font-size: 14px;
 }
