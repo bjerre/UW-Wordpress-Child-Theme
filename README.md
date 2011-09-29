@@ -17,6 +17,7 @@ The goal is to skin TwentyEleven with as simply as possible in order to keep all
 ### 0.1.1
 
 Bug fixes with integration
+  
   - left navigation appearing on all pages
   - images from parent theme migrated over to child theme
   - made and adjusted local copy of twentyeleven css file 
@@ -24,5 +25,6 @@ Bug fixes with integration
 ### 0.1.0
 
 First build 
+  
   - basic integration with twenty eleven
   - index page and sub pages branded
