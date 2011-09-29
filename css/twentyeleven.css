@@ -378,7 +378,7 @@ input[type=text] {
 	padding: 3px;
 }
 input#s {
-	background: url(images/search.png) no-repeat 5px 6px;
+	background: url(../images/search.png) no-repeat 5px 6px;
 	-moz-border-radius: 2px;
 	border-radius: 2px;
 	font-size: 14px;
@@ -934,7 +934,7 @@ a:active img[class*="wp-image-"],
 
 /* Comments link */
 .entry-header .comments-link a {
-	background: #eee url(images/comment-bubble.png) no-repeat;
+	background: #eee url(../images/comment-bubble.png) no-repeat;
 	color: #666;
 	font-size: 13px;
 	font-weight: normal;
@@ -1874,7 +1874,7 @@ section.ephemera .entry-title a span {
 	top: 0;
 }
 .commentlist > li:before {
-	content: url(images/comment-arrow.png);
+	content: url(../images/comment-arrow.png);
 	left: -21px;
 	position: absolute;
 }
@@ -2148,7 +2148,7 @@ p.comment-form-comment {
 	font-weight: bold;
 }
 #site-generator .sep {
-	background: url(images/wordpress.png) center left no-repeat;
+	background: url(../images/wordpress.png) center left no-repeat;
 	color: transparent;
 	display: inline-block;
 	height: 16px;

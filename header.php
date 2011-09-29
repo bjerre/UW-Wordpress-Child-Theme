@@ -23,7 +23,6 @@
 		echo ' | ' . sprintf( __( 'Page %s', 'twentyeleven' ), max( $paged, $page ) );
 
 	?></title>
-<!--Bootstrap-->
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
@@ -74,3 +73,5 @@
  <div id="bgSliceMiddle">
 
 <?php get_template_part('banner'); ?>
+
+<?php get_template_part('leftnav'); ?>

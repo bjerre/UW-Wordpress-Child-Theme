@@ -13,7 +13,7 @@ h4 {
 ul#navg {
     margin: 0 0.5em 1.5em 1.5em;
     clear: both;
-    display: inline-block;
+    /*display: inline-block;*/
 }
 #navg div.mainNavLinkRight .text {
 	display: none;
