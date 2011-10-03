@@ -36,7 +36,7 @@ label {
 }
 #respond {
   margin:0;
-  width:100%;
+  width:95%;
 }
 #respond .comment-form-author .required, #respond .comment-form-email .required {
   top: 55px;
