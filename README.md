@@ -2,8 +2,8 @@
 
 ## About
 
-This theme is a child theme of the default TwentyEleven Wordpress theme.  
-The goal is to skin TwentyEleven with as simply as possible in order to keep all the TwentyEleven features while maintaining a branded theme.
+This theme is a child theme of the default TwentyEleven Wordpress theme.
+The goal is to keep all the TwentyEleven features while creating a branded theme.
 
 ## TODO 
 
@@ -14,15 +14,11 @@ The goal is to skin TwentyEleven with as simply as possible in order to keep all
 
 ## History
 
-### 0.1.1
+### 0.1.1 - Bug fixes with integration  
+  - left navigation appearing on all pages  
+  - images from parent theme migrated over to child theme  
+  - made and adjusted local copy of twentyeleven css file  
 
-Bug fixes with integration
-  - left navigation appearing on all pages
-  - images from parent theme migrated over to child theme
-  - made and adjusted local copy of twentyeleven css file 
-
-### 0.1.0
-
-First build 
-  - basic integration with twenty eleven
-  - index page and sub pages branded
+### 0.1.0 - First build  
+  - basic integration with twenty eleven  
+  - index page and sub pages branded  
