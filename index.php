@@ -49,5 +49,10 @@ get_header(); ?>
 			</div><!-- #content -->
 		</div><!-- #primary -->
 
-<?php get_sidebar(); ?>
+  <?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
+
+    <?php get_sidebar(); ?>
+
+  <?php endif; ?>
+
 <?php get_footer(); ?>
