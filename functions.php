@@ -44,6 +44,25 @@ function add_additional_css() {
 }
 
 /**
+ * Adds the javascript files for that are needed on each page 
+ *
+ */
+add_action('wp_enqueue_scripts', 'add_additional_js');
+function add_additional_js() {
+    $jsfiles = array(
+      //'NAME OF FILE' => 'FILENAME ISTELF',
+      'jquery' => '',
+      'site' => 'site.js'
+    );
+    foreach ($jsfiles as $name => $file) {
+      if( strlen($file) > 0 ) {
+        $url = get_stylesheet_directory_uri() . "/js/$file";
+        wp_register_script($name, $url);
+      }
+      wp_enqueue_script($name);
+    }
+}
+/**
  * Grabs the dropdown navigation off of http://uw.edu (UW Homepage)
  * after a certain amount of time has passed and stores it in the database. 
  *
