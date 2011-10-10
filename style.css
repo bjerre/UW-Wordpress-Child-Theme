@@ -1,1 +1,286 @@
-/Users/dizzzy/Dropbox/uw-wordpress/style.css
+/*
+Theme Name:     UW Wordpress Theme
+Theme URI:      http: //example.com/
+Description:    UW branded child theme based on the Twenty Eleven theme 
+Author:         UW Web Team
+Author URI:     http: //example.com/about/
+Template:       twentyeleven
+Version:        0.1.0
+*/
+
+/* override bootstrap */
+body {
+  font-size:12px;
+}
+label {
+  float: none;
+  width: auto;
+  text-align: auto;
+}
+.container {
+  width: 950px
+}
+#leftNav h2, #rightInfo h2 {
+	font-size: 14px;
+}
+h1 a, h1, .entry-title, .entry-title a {
+	color: #39275b
+}
+a {
+    color: #0F79A3;
+}
+/* override twentyeleven css */
+
+#content {
+  margin: 0;
+  width: 100%;
+}
+#respond {
+  margin:0;
+  width:95%;
+}
+#respond .comment-form-author .required, #respond .comment-form-email .required {
+  top: 55px;
+}
+#respond input[type="text"] {
+  height: 55px;
+  width:80%;
+}
+
+/* Begin UW Theme CSS */
+#leftnav {
+  width: 230px;
+  float: left;
+  margin-right: 10px;
+}
+#searchform {
+	margin-bottom: 20px;
+}
+.contentdate {
+	background-image: url(images/date.gif);
+	float: left;
+	width: 45px;
+	height: 50px;
+	margin: 25px 10px 0 0;
+	padding: 0;
+}
+	
+.contentdate h3 {
+	color: #fff;
+	background-color: transparent;
+	font-size: 10px;
+	font-weight: normal;
+	padding: 4px 0 0 13px;
+	margin: 0;
+	text-transform: uppercase;
+}
+	
+.contentdate h4 {
+	color: #999;
+	font-size: 21px;
+	font-weight: bold;
+	padding: 3px 4px 0 3px;
+	margin: 0;
+	text-align: center;
+}
+#informationStory h1  {
+	margin-top: 30px;
+}
+#informationStory p {
+	
+	}
+p.authoring {
+	margin-top: 5px;
+	padding-top: 5px;
+	padding-bottom: 10px;
+	border-top: 1px dotted #ccc;
+}
+.banner {
+	padding: 25px 0 15px 38px;
+}
+.title {
+	display: none;
+}
+.banner {
+	padding:25px 0 15px 38px;
+}
+/************************************************
+*	Comments									*
+************************************************/
+	
+#commentblock {
+	width: 400px;
+	color: #000000;
+	float: left;
+	padding: 20px 20px 10px 20px;
+	margin: 10px 0px 40px 0px;
+	border-top: 2px solid #000000;
+	border-bottom: 1px solid #000000;
+	background-color: #F6F6F6;
+	}
+	
+#commentblock ol{
+	list-style-type: square;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 10px 0px;
+	}
+	
+.commentdate {
+	font-size: 12px;
+	padding-left: 0px;
+	}
+	
+#commentlist li p{
+	margin-bottom: 8px;
+	line-height: 20px;
+	padding: 0px;
+	}
+
+.commentname {
+	color: #333333;
+	margin: 0px;
+	padding: 5px 5px 5px 0px;
+	}
+
+.commentinfo{
+	clear: both;
+	}
+
+.commenttext {
+	clear: both;
+	margin: 3px 0px 10px 0px;
+	padding: 20px 10px 5px 10px;
+	width: 350px;
+	background: #FFFFFF url(images/comment.gif) no-repeat top;
+	}
+
+.commenttext-admin {
+	clear: both;
+	margin: 3px 0px 10px 0px;
+	padding: 20px 10px 5px 10px;
+	width: 350px;
+	background: #FFFFFF url(images/comment.gif) no-repeat top;
+	}
+
+#commentsformheader{
+	padding-left: 0px;
+	}
+
+#commentsform{
+	text-align: center;
+	margin: 0px;
+	padding: 0px;
+	}
+
+#commentsform form{
+	text-align: left;
+	margin: 0px;
+	}
+
+#commentsform p{
+	margin: 0px;
+	}
+
+#commentsform form textarea{
+	width: 99%;
+	}
+	
+p.comments_link  {
+	margin: 0px;
+	padding: 0px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+}
+#informationStory {
+	padding-bottom: 15px;
+}
+.donate .tweetmeme_button, .donate .addtoany_share_save_container {
+	display: none;
+}
+.donate h1 {
+	border-bottom:1px solid #E8E8E8;
+	margin-bottom:40px;
+	margin-top:30px;
+	padding-bottom:5px;
+	padding-left:15px;
+}
+#social li {
+	background:transparent url(images/social.gif) no-repeat scroll left top;
+	margin-left:5px !important;
+	margin-top:5px !important;
+	padding-left:22px !important;
+	}
+#social li a:hover {
+	text-decoration: underline;
+}
+#social li.leftTwitter {
+	background-position: 0px -24px;
+}
+#social li.leftFacebook {
+	background-position: 0px -48px;
+}
+#social li.leftRss {
+	background-position: 0px 0px;
+}
+#social li.leftPromise {
+	background-position: 0px -72px;
+}
+h2.widgettitle {
+	list-style-position: outside;
+}
+
+/************************************************
+*	Structure									*
+************************************************/
+
+#primary.no-widgets {
+	width: 650px;	
+}
+#primary {
+  float: left;
+  margin: 0;
+  width: 450px;
+}
+#leftnav {
+    margin-right: 25px;
+}
+.leftNavBackground {
+    min-height: 200px;
+}
+.menu {
+	padding: 0 0 0 20px;
+}
+
+
+/************************************************
+*	Secondary Override							*
+************************************************/
+#leftNav ul ul a {
+    font-size: 100%;
+}
+#leftNav .current_page_item {
+    background: url("images/leftNav_bg.png") no-repeat scroll center bottom transparent;
+    border-bottom: medium none;
+    font-size: 118%;
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding-bottom: 18px;
+}
+.current_page_item a, #menu > li.navSectionHead a:hover {
+    background: url("images/arrow_h3.gif") no-repeat scroll left 7px transparent;
+}
+
+/***************
+ *404 page
+***************/
+.error404 #searchform {
+  background: #F9F9F9;
+  border: 1px solid #DDD;
+  border-width: 1px 0;
+  margin: 0 -8.9% 1.625em;
+  overflow: hidden;
+  padding: 1.625em 8.9%;
+}
+
