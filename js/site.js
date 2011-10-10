@@ -1,20 +1,9 @@
 jQuery(document).ready(function($){
 
-  var menu = $('#leftNav').find('.menu'), clicked = [];
-  if (!menu.length) {
-    menu = $('#leftNav').find('.pagenav')
-  }
+  var menu = $('#leftNav').find('.pagenav')
   menu.find('li')
-    .first().addClass('selectedAccordion navSectionHead')
-      .end()
     .filter( function() {
-      var $this = $(this),
-          ul = $this.children('ul');
-      if (ul.length == 1) {
-        var el = $this.clone();
-        el.children('ul').remove().end().prependTo(ul);
-        return true;
-      }
+      return $(this).children('ul').length == 1
     }).addClass('selectedArrow')
     .children('a')
       .click(function(){
