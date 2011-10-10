@@ -12,11 +12,7 @@ Version:        0.1.0
 body {
   font-size:12px;
 }
-label {
-  float: none;
-  width: auto;
-  text-align: auto;
-}
+
 .container {
   width: 950px
 }
@@ -43,7 +39,7 @@ a {
   top: 55px;
 }
 #respond input[type="text"] {
-  height: 55px;
+  height: 35px;
   width:80%;
 }
 
@@ -53,9 +49,7 @@ a {
   float: left;
   margin-right: 10px;
 }
-#searchform {
-	margin-bottom: 20px;
-}
+
 .contentdate {
 	background-image: url(images/date.gif);
 	float: left;
@@ -260,7 +254,7 @@ h2.widgettitle {
 #leftNav ul ul a {
     font-size: 100%;
 }
-#leftNav .current_page_item {
+#leftNav .navSectionHead {
     background: url("images/leftNav_bg.png") no-repeat scroll center bottom transparent;
     border-bottom: medium none;
     font-size: 118%;
@@ -268,19 +262,39 @@ h2.widgettitle {
     margin-bottom: 10px;
     padding-bottom: 18px;
 }
-.current_page_item a, #menu > li.navSectionHead a:hover {
+.navSectionHead a, .menu > li.navSectionHead a:hover {
     background: url("images/arrow_h3.gif") no-repeat scroll left 7px transparent;
 }
-
+.menu a {
+    display: inline-block;
+    font-size: 92%;
+    line-height: 130%;
+    padding: 2px 10px;
+}
 /***************
  *404 page
 ***************/
-.error404 #searchform {
-  background: #F9F9F9;
-  border: 1px solid #DDD;
-  border-width: 1px 0;
-  margin: 0 -8.9% 1.625em;
-  overflow: hidden;
-  padding: 1.625em 8.9%;
+
+#primary.fourOhhhFour {
+	background: url("images/404.jpg") no-repeat center center;
+	width: 650px;
+	height: 700px;
 }
 
+/***************
+ Form Style
+**************
+
+#commentform p {
+	position: relative;
+}
+#commentform .required {
+    color: red;
+    padding: 0 5px;
+    position: absolute;
+    top: 4px;
+}
+#commentform label {
+    padding: 0 10px 0 0;
+    width: 75px;
+}*/

@@ -357,18 +357,7 @@ h3.greyItal i {
 	background:none;
 	list-style:none;
 }
-#searchsubmit {
-    height: 25px;
-    width: 24px;
-    cursor: pointer;
-    text-indent: -9999px;
-    border: none;
-    background: url(../images/magglass.gif) no-repeat left top;
-	line-height: 0;
-}
-#s {
-	width: 110px;
-}
+
  #region-content .sociable li {
 	background:none;
 }

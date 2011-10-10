@@ -161,4 +161,5 @@ if (!function_exists('uw_dropdowns_need_updating')) {
         return (time() - $options['_nav_updated'] > $options['_nav_update_frequency']);
     }
 }
+
 ?>
