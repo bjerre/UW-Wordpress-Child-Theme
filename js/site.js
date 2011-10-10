@@ -1,6 +1,9 @@
 jQuery(document).ready(function($){
 
   var menu = $('#leftNav').find('.menu'), clicked = [];
+  if (!menu.length) {
+    menu = $('#leftNav').find('.pagenav')
+  }
   menu.find('li')
     .first().addClass('selectedAccordion navSectionHead')
       .end()
