@@ -12,7 +12,10 @@ Version:        0.1.0
 body {
   font-size:12px;
 }
-
+#leftNav a:hover {
+    color: #999999;
+    text-decoration: none;
+}
 .container {
   width: 950px
 }
@@ -283,18 +286,11 @@ h2.widgettitle {
 
 /***************
  Form Style
-**************
+***************/
 
-#commentform p {
-	position: relative;
+textarea#comment {
+	width: 100%;
 }
-#commentform .required {
-    color: red;
-    padding: 0 5px;
-    position: absolute;
-    top: 4px;
+.btn.primary {
+    margin-left: 150px;
 }
-#commentform label {
-    padding: 0 10px 0 0;
-    width: 75px;
-}*/
