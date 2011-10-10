@@ -257,7 +257,7 @@ h2.widgettitle {
 #leftNav ul ul a {
     font-size: 100%;
 }
-#leftNav .navSectionHead, .uwadv-title {
+#leftNav .navSectionHead {
     background: url("images/leftNav_bg.png") no-repeat scroll center bottom transparent;
     border-bottom: medium none;
     font-size: 118%;
