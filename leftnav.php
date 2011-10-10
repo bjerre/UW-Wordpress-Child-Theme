@@ -4,26 +4,19 @@
         <?php
           global $post;
           
+          $id = (!$post->post_parent) ? $post->ID : $post->post_parent;
+          
           $args = array(
-            'depth'        => $post->post_parent ? 1 : 0,
-            'show_date'    => '',
+            'depth'        => 0,
             'date_format'  => get_option('date_format'),
-            'child_of'     => $post->ID,
-            'exclude'      => '',
-            'include'      => '',
+            'child_of'     => $id,
             'title_li'     => get_the_title($post->post_parent),
             'echo'         => 0,
-            'authors'      => '',
-            'sort_column'  => 'menu_order, post_title',
-            'link_before'  => '',
-            'link_after'   => '',
-            'walker'       => '' );
+            'sort_column'  => 'menu_order, post_title');
+
           $menu = wp_list_pages($args);
-          if ( !strlen($menu)) {
-            wp_nav_menu('depth=1');
-          } else {
-            echo $menu;
-          }
+
+          echo ( !strlen($menu)) ? wp_nav_menu('depth=1') : $menu ;
         ?>
 
       <br class="clear" /><br class="clear" />
