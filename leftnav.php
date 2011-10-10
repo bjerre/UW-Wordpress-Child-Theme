@@ -10,7 +10,7 @@
             'depth'        => 0,
             'date_format'  => get_option('date_format'),
             'child_of'     => $id,
-            'title_li'     => get_the_title($post->post_parent),
+            'title_li'     => '<span class="uwadv-title" style="margin-left:20px">' . get_the_title($post->post_parent) . '</span>',
             'echo'         => 0,
             'sort_column'  => 'menu_order, post_title');
 

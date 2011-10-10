@@ -257,7 +257,7 @@ h2.widgettitle {
 #leftNav ul ul a {
     font-size: 100%;
 }
-#leftNav .navSectionHead {
+#leftNav .navSectionHead, .uwadv-title {
     background: url("images/leftNav_bg.png") no-repeat scroll center bottom transparent;
     border-bottom: medium none;
     font-size: 118%;
@@ -270,9 +270,9 @@ h2.widgettitle {
 }
 .menu a {
     display: inline-block;
-    font-size: 92%;
+    font-size: 100%;
     line-height: 130%;
-    padding: 2px 10px;
+    padding: 3px 10px;
 }
 /***************
  *404 page

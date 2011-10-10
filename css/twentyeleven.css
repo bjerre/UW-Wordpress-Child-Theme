@@ -877,7 +877,7 @@ a:active img[class*="wp-image-"],
 
 /* Comments link */
 .entry-header .comments-link a {
-	background: #eee url(../images/comment-bubble.png) no-repeat;
+	background: #eee url(../images/comment_bubble.png) no-repeat;
 	color: #666;
 	font-size: 13px;
 	font-weight: normal;
@@ -1191,10 +1191,8 @@ h1.showcase-heading {
 
 /* Intro */
 article.intro {
-	background: #f9f9f9;
-	border-bottom: none;
-	margin: -1.855em -8.9% 1.625em;
-	padding: 0 8.9%;
+    background: none repeat scroll 0 0 #F9F9F9;
+    padding: 0 8.9%;
 }
 article.intro .entry-title {
 	display: none;
