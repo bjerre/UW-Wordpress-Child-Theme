@@ -62,6 +62,49 @@ function add_additional_js() {
       wp_enqueue_script($name);
     }
 }
+
+/**
+ * UW Custom form template
+ */
+
+add_filter('comment_form_default_fields', 'uw_form_fields');
+add_filter('comment_form_field_comment',  'uw_form_field_comment');
+add_action('comment_form_after_fields', 'uw_remove_comment_help');
+function uw_form_fields($fields) {
+
+  $commenter = wp_get_current_commenter();
+
+  $fields =  array(
+    'author'  => '<div class="clearfix required">' . '<label for="author">' . __( 'Name' ) . '</label> ' . '<div class="input">' . 
+                   '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' />' .
+                   '<span class="help-inline">Required</span>' . '</div>' . '</div>',
+    'email'   => '<div class="clearfix required">' . '<label for="author">' . __( 'Email' ) . '</label> ' . '<div class="input">' .
+                   '<input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' />' .
+                   '<span class="help-inline">Required</span>' . '</div>' . '</div>',
+    'url'     => '<div class="clearfix">' . '<label for="url">' . __( 'Website' ) . '</label>' . '<div class="input">' .
+                   '<input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /></p>' . 
+                   '</div>' . '</div>'
+  );
+  
+  return $fields;
+}
+
+function uw_form_field_comment($comment_field) {
+  $comment_field = "
+          <div class='clearfix'>
+            <label for='comment'>Comment</label>
+            <div class='input'>
+              <textarea class='xxlarge' id='comment' name='comment' rows='3'></textarea>
+              <span class='help-block'>
+              You may use these HTML tags and attributes: <code>a abbr acrynym b blockquote cite code del em i  q strike strong</code>
+              </span>
+            </div>
+          </div>
+  ";
+    
+  return $comment_field;
+}
+
 /**
  * Grabs the dropdown navigation off of http://uw.edu (UW Homepage)
  * after a certain amount of time has passed and stores it in the database. 
