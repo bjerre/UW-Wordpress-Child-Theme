@@ -14,7 +14,17 @@
 
 get_header(); ?>
 
-		<div id="primary">
+
+  <?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
+
+      <div id="primary">
+
+  <?php else: ?>
+
+      <div id="primary" class="no-widgets">
+
+  <?php endif; ?>
+
 			<div id="content" role="main">
 
 			<?php if ( have_posts() ) : ?>
@@ -47,12 +57,13 @@ get_header(); ?>
 			<?php endif; ?>
 
 			</div><!-- #content -->
+
 		</div><!-- #primary -->
 
-  <?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
+    <?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
 
-    <?php get_sidebar(); ?>
+      <?php get_sidebar(); ?>
 
-  <?php endif; ?>
+    <?php endif; ?>
 
 <?php get_footer(); ?>
