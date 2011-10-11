@@ -274,6 +274,15 @@ h2.widgettitle {
     line-height: 130%;
     padding: 3px 10px;
 }
+.children .current_page_item > a {
+    background: none;
+    font-weight: normal;
+    padding-left: 10px;
+}
+#leftNav ul .children .children li {
+	padding-left: 0px;
+}
+
 /***************
  *404 page
 ***************/
@@ -293,4 +302,18 @@ textarea#comment {
 }
 .btn.primary {
     margin-left: 150px;
+}
+
+/***************
+ Form Style
+***************/
+
+.uwadv-title {
+    background: url("images/leftNav_bg.png") no-repeat scroll center bottom transparent;
+    color: #484848;
+    display: block;
+    font-weight: bold;
+    margin: 0 0 0 20px;
+    padding: 4px 10px 19px;
+    text-align: left;
 }
