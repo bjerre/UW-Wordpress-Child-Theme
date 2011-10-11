@@ -7,12 +7,16 @@ The goal is to keep all the TwentyEleven features while creating a branded theme
 
 ## TODO 
 
-1. Widgets on subpages
-
-2. Analytics
-
+1. Analytics
 
 ## History
+
+### 0.2.0 - Initial branding
+  - completed base css and javascript
+  - widgets are functional
+  - left navigation works for wp_page_menu fallback
+  - 404 page
+  - bug fixes
 
 ### 0.1.1 - Bug fixes with integration  
   - left navigation appearing on all pages  
