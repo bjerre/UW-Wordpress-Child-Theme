@@ -47,7 +47,7 @@ a {
 }
 
 /* Begin UW Theme CSS */
-#leftnav {
+#leftNav {
   width: 230px;
   float: left;
   margin-right: 10px;
@@ -240,7 +240,7 @@ h2.widgettitle {
   margin: 0;
   width: 450px;
 }
-#leftnav {
+#leftNav {
     margin-right: 25px;
 }
 .leftNavBackground {
