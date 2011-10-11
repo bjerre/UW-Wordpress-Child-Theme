@@ -378,7 +378,7 @@ input.wTextInput {
 	width: 74px;
 	height: 74px;
 }
-.formbutton {
+input.formbutton {
 	background:url(../images/header_img/submit2_8.png) no-repeat left top;
 	border:medium none;
 	cursor:pointer;

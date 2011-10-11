@@ -325,9 +325,6 @@ pre {
 	overflow: auto;
 	padding: 0.75em 1.625em;
 }
-code, kbd {
-	font: 13px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
-}
 abbr, acronym, dfn {
 	border-bottom: 1px dotted #666;
 	cursor: help;
@@ -355,40 +352,6 @@ sub {
 	top: .5ex;
 }
 
-/* Forms */
-input[type=text],
-input[type=password],
-textarea {
-	background: #fafafa;
-	-moz-box-shadow: inset 0 1px 1px rgba(0,0,0,0.1);
-	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.1);
-	box-shadow: inset 0 1px 1px rgba(0,0,0,0.1);
-	border: 1px solid #ddd;
-	color: #888;
-}
-input[type=text]:focus,
-textarea:focus {
-	color: #373737;
-}
-textarea {
-	padding-left: 3px;
-	width: 98%;
-}
-input[type=text] {
-	padding: 3px;
-}
-input#s {
-	background: url(../images/search.png) no-repeat 5px 6px;
-	-moz-border-radius: 2px;
-	border-radius: 2px;
-	font-size: 14px;
-	height: 22px;
-	line-height: 1.2em;
-	padding: 4px 10px 4px 28px;
-}
-input#searchsubmit {
-	display: none;
-}
 
 /* Links */
 a {
@@ -401,24 +364,6 @@ a:hover {
 	text-decoration: underline;
 }
 
-/* Assistive text */
-.assistive-text {
-	position: absolute !important;
-	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
-	clip: rect(1px, 1px, 1px, 1px);
-}
-#access a.assistive-text:active,
-#access a.assistive-text:focus {
-	background: #eee;
-	border-bottom: 1px solid #ddd;
-	color: #1982d1;
-	clip: auto !important;
-	font-size: 12px;
-	position: absolute;
-	text-decoration: underline;
-	top: 0;
-	left: 7.6%;
-}
 
 
 /* =Header
@@ -711,9 +656,7 @@ a:hover {
 	border-top: 1px solid #ddd;
 	padding: 6px 10px 6px 0;
 }
-.entry-content #s {
-	width: 75%;
-}
+
 .comment-content ul,
 .comment-content ol {
 	margin-bottom: 1.625em;
@@ -1946,7 +1889,7 @@ a.comment-reply-link > span {
 	width: auto;
 }
 
-/* Comment Form */
+/* Comment Form 
 #respond {
 	background: #ddd;
 	border: 1px solid #d3d3d3;
@@ -2099,7 +2042,7 @@ p.comment-form-comment {
 .form-allowed-tags {
 	display: none;
 }
-
+*/
 
 /* =Footer
 ----------------------------------------------- */

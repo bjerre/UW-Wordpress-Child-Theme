@@ -58,7 +58,6 @@
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 
 <?php wp_get_archives('type=monthly&format=link'); ?>
-<?php wp_head(); ?>   
     
 <style type="text/css" media="screen">
 <!-- @import url( <?php bloginfo('stylesheet_url'); ?> ); -->

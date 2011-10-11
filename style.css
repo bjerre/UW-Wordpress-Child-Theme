@@ -12,10 +12,9 @@ Version:        0.1.0
 body {
   font-size:12px;
 }
-label {
-  float: none;
-  width: auto;
-  text-align: auto;
+#leftNav a:hover {
+    color: #999999;
+    text-decoration: none;
 }
 .container {
   width: 950px
@@ -23,13 +22,14 @@ label {
 #leftNav h2, #rightInfo h2 {
 	font-size: 14px;
 }
-
-/* override twentyeleven css */
-#primary {
-  float: left;
-  margin: 0 -25% 0 0;
-  width: 45%;
+h1 a, h1, .entry-title, .entry-title a {
+	color: #39275b
 }
+a {
+    color: #0F79A3;
+}
+/* override twentyeleven css */
+
 #content {
   margin: 0;
   width: 100%;
@@ -42,7 +42,7 @@ label {
   top: 55px;
 }
 #respond input[type="text"] {
-  height: 55px;
+  height: 35px;
   width:80%;
 }
 
@@ -52,9 +52,7 @@ label {
   float: left;
   margin-right: 10px;
 }
-#searchform {
-	margin-bottom: 20px;
-}
+
 .contentdate {
 	background-image: url(images/date.gif);
 	float: left;
@@ -230,3 +228,92 @@ h2.widgettitle {
 	list-style-position: outside;
 }
 
+/************************************************
+*	Structure									*
+************************************************/
+
+#primary.no-widgets {
+	width: 650px;	
+}
+#primary {
+  float: left;
+  margin: 0;
+  width: 450px;
+}
+#leftnav {
+    margin-right: 25px;
+}
+.leftNavBackground {
+    min-height: 200px;
+}
+.menu {
+	padding: 0 0 0 20px;
+}
+
+
+/************************************************
+*	Secondary Override							*
+************************************************/
+#leftNav ul ul a {
+    font-size: 100%;
+}
+#leftNav .navSectionHead {
+    background: url("images/leftNav_bg.png") no-repeat scroll center bottom transparent;
+    border-bottom: medium none;
+    font-size: 118%;
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding-bottom: 18px;
+}
+.navSectionHead a, .menu > li.navSectionHead a:hover {
+    background: url("images/arrow_h3.gif") no-repeat scroll left 7px transparent;
+}
+.menu a {
+    display: inline-block;
+    font-size: 100%;
+    line-height: 130%;
+    padding: 3px 10px;
+}
+.children .current_page_item > a {
+    background: none;
+    font-weight: normal;
+    padding-left: 10px;
+}
+#leftNav ul .children .children li {
+	padding-left: 0px;
+}
+
+/***************
+ *404 page
+***************/
+
+#primary.fourOhhhFour {
+	background: url("images/404.jpg") no-repeat center center;
+	width: 650px;
+	height: 700px;
+}
+
+/***************
+ Form Style
+***************/
+
+textarea#comment {
+	width: 100%;
+}
+.btn.primary {
+    margin-left: 150px;
+}
+
+/***************
+ Form Style
+***************/
+
+.uwadv-title {
+    background: url("images/leftNav_bg.png") no-repeat scroll center bottom transparent;
+    color: #484848;
+    display: block;
+    font-weight: bold;
+    margin: 0 0 0 20px;
+    padding: 4px 10px 19px;
+    text-align: left;
+}
