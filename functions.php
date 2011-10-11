@@ -34,7 +34,8 @@ function add_additional_css() {
       'twentyeleven' => 'twentyeleven.css',
       'header' => 'header.css',
       'footer' => 'footer.css',
-      'secondary' => 'secondary.css'
+      'secondary' => 'secondary.css',
+      'reveal' => 'reveal.css'
     );
     foreach ($cssfiles as $name => $file) {
       $url = get_stylesheet_directory_uri() . "/css/$file";
@@ -53,6 +54,7 @@ function add_additional_js() {
       //'NAME OF FILE' => 'FILENAME ISTELF',
       'jquery' => '',
       'weather' => 'https://raw.github.com/uweb/jquery.uw/master/src/min/jquery.uw.weather.min.js',
+      'site' => 'site.js',
       'site' => 'site.js'
     );
     foreach ($jsfiles as $name => $file) {
