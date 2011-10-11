@@ -69,7 +69,7 @@ function add_additional_js() {
 
 add_filter('comment_form_default_fields', 'uw_form_fields');
 add_filter('comment_form_field_comment',  'uw_form_field_comment');
-add_action('comment_form_after_fields', 'uw_remove_comment_help');
+//add_action('comment_form_after_fields', 'uw_remove_comment_help');
 function uw_form_fields($fields) {
 
   $commenter = wp_get_current_commenter();
