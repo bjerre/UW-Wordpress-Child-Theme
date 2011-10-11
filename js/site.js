@@ -23,6 +23,21 @@ jQuery(document).ready(function($){
           .toggleClass('trikiti').children('ul').slideToggle(200)
         return false;
       })
+    /* popstate */
+    .end().end()
+    .find('a')
+    .filter(function() {
+      return $(this).siblings('ul').length === 0 
+    })
+    .click(function() {
+      history.pushState({ path: this.path }, '', this.href)
+      $.get(this.href, function(data){
+        console.log(data);
+        $('#primary').empty().html(data.find('#primary'));
+        return false;
+      },'html')
+      return false;
+    })
 
 
 /* --------- Search box clear --------- */
@@ -38,5 +53,6 @@ jQuery(document).ready(function($){
 
 /* ---- Weather widget ----- */
   $('#weather').weather();
+
 
 });
