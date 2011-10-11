@@ -317,3 +317,6 @@ textarea#comment {
     padding: 4px 10px 19px;
     text-align: left;
 }
+#leftNav li.pagenav {
+    padding: 0 0 0 20px;
+}

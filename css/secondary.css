@@ -121,11 +121,12 @@ li {margin: 0; padding:0;}
 	background-color: #F6F6F6;
 }
 #leftNav li {
-	display: block;
-	margin: 0;
-	padding: 1px 0;
+    display: block;
+    line-height: 1.2em;
+    margin: 0;
+    padding: 1px 0;
 }
-.selectedAccordion, .current_page_item > a, .current_page_ancestor > a{
+.selectedAccordion, .current_page_item > a, .current_page_ancestor > a {
     background: url("../images/arrow_h3.gif") no-repeat scroll -1px 5px transparent;
     font-weight: bold;
     padding-left: 10px;
@@ -180,10 +181,28 @@ ul li ui li a.selectedAccordion {
 	padding-right:0;
 }
 #leftNav ul ul li {
-	border-bottom: 1px solid #CCC;
-	padding-left: 10px;
-	padding-top: 2px;
-	background-color: #ECEBEC;
+    background-color: #ECEBEC;
+    border-bottom: 1px solid #CCCCCC;
+    padding-left: 10px;
+    padding-right: 5px;
+    padding-top: 5px;
+}
+#leftNav ul ul li:last-child {
+    -webkit-border-bottom-left-radius: 4px;
+    -webkit-border-bottom-right-radius: 4px;
+    -moz-border-bottom-left-radius: 4px;
+    -moz-border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-bottom: none;
+}
+#leftNav ul ul li:first-child {
+    -webkit-top-bottom-left-radius: 4px;
+    -webkit-top-bottom-right-radius: 4px;
+    -moz-border-top-left-radius: 4px;
+    -moz-border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
 }
 #leftNav ul ul ul {
 	background-image: none;

@@ -1,5 +1,9 @@
 jQuery(document).ready(function($){
 
+  /* Left navigation - 
+   *   clones a link as the first link in 
+   *   the accordion
+   */
   var menu = $('#leftNav').find('.menu'), clicked = [];
   menu.find('li')
     .first().addClass('selectedAccordion navSectionHead')
@@ -20,11 +24,8 @@ jQuery(document).ready(function($){
         return false;
       })
 
-});
 
 /* --------- Search box clear --------- */
-
-jQuery(document).ready(function($) {
 	$(".wTextInput").focus(function () {
 		if ($(this).val() === $(this).attr("title")) {
 			$(this).val("");
@@ -34,4 +35,8 @@ jQuery(document).ready(function($) {
 			$(this).val($(this).attr("title"));
 		}
 	});
+
+/* ---- Weather widget ----- */
+  $('#weather').weather();
+
 });

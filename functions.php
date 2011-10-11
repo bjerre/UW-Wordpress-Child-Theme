@@ -52,11 +52,12 @@ function add_additional_js() {
     $jsfiles = array(
       //'NAME OF FILE' => 'FILENAME ISTELF',
       'jquery' => '',
+      'weather' => 'https://raw.github.com/uweb/jquery.uw/master/src/min/jquery.uw.weather.min.js',
       'site' => 'site.js'
     );
     foreach ($jsfiles as $name => $file) {
       if( strlen($file) > 0 ) {
-        $url = get_stylesheet_directory_uri() . "/js/$file";
+        $url = (strpos($file, 'http') === false) ? get_stylesheet_directory_uri() . "/js/$file" : $file;
         wp_register_script($name, $url);
       }
       wp_enqueue_script($name);

@@ -235,11 +235,17 @@ ul#navg {
 	position: absolute;
 	right: 0;
 }
+#weather a {
+    display: block;
+    float: left;
+    padding: 0 0 0 7px;
+}
 #weather span {
-	display: block;
-	margin:-3px;
-	padding:4px 0 0;
-	text-align:center;
+    display: block;
+    float: left;
+    margin: -3px;
+    padding: 9px 0 0 11px;
+    text-align: center;
 }
 #weather .weather-city a {
 	color: #fff;
