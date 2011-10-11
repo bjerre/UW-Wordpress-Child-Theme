@@ -5,7 +5,7 @@ Description:    UW branded child theme based on the Twenty Eleven theme
 Author:         UW Web Team
 Author URI:     http: //example.com/about/
 Template:       twentyeleven
-Version:        0.1.0
+Version:        0.2.0
 */
 
 /* override bootstrap */
@@ -47,7 +47,7 @@ a {
 }
 
 /* Begin UW Theme CSS */
-#leftnav {
+#leftNav {
   width: 230px;
   float: left;
   margin-right: 10px;
@@ -240,7 +240,7 @@ h2.widgettitle {
   margin: 0;
   width: 450px;
 }
-#leftnav {
+#leftNav {
     margin-right: 25px;
 }
 .leftNavBackground {
@@ -316,4 +316,7 @@ textarea#comment {
     margin: 0 0 0 20px;
     padding: 4px 10px 19px;
     text-align: left;
+}
+#leftNav li.pagenav {
+    padding: 0 0 0 20px;
 }
