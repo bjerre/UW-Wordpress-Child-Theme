@@ -11,16 +11,21 @@ jQuery(document).ready(function($){
           $('#primary').fadeOut(200, function() {
             $(this).replaceWith($data.find('#primary').hide().fadeIn(200))
           })
+
+          var old_img = $('a.banner').children('img');
           var new_img = $data.find('a.banner').children('img').hide();
-          new_img.bind('load', function() { 
-            $(this).unbind('load');
-            $('.banner').append(new_img)
-              .children('img').first()
-              .fadeOut(200, function() {
-                $(this).remove();
-              });
-            $(this).fadeIn(200);
-          });
+
+          if( old_img attr('src') != new_img.attr('src') ) {
+            new_img.bind('load', function() { 
+              $(this).unbind('load');
+              $('.banner').append(new_img)
+                .children('img').first()
+                .fadeOut(200, function() {
+                  $(this).remove();
+                });
+              $(this).fadeIn(200);
+            });
+          }
 
         });
         return false;
