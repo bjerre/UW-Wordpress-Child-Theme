@@ -232,7 +232,7 @@ h2.widgettitle {
 *	Structure									*
 ************************************************/
 
-#primary.no-widgets {
+.no-widgets #primary {
 	width: 650px;	
 }
 #primary {
