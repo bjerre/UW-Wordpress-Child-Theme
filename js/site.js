@@ -17,7 +17,7 @@ jQuery(document).ready(function($){
             $('.banner').append(new_img)
               .children('img').first()
               .fadeOut(200, function() {
-                $(this).children('img').first().remove();
+                $(this).first().remove();
               });
             $(this).fadeIn(200);
           });
