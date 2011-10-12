@@ -15,7 +15,7 @@ jQuery(document).ready(function($){
           var old_img = $('a.banner').children('img');
           var new_img = $data.find('a.banner').children('img').hide();
 
-          if( old_img attr('src') != new_img.attr('src') ) {
+          if( old_img.attr('src') != new_img.attr('src') ) {
             new_img.bind('load', function() { 
               $(this).unbind('load');
               $('.banner').append(new_img)
