@@ -2,8 +2,11 @@ jQuery(document).ready(function($){
 
   var getpage = function() {
       if(Modernizr.history) {
+        if( this.href == location.href ) return false;
+        $('body').addClass('getting-page');
         history.pushState({ path: this.path }, '', this.href)
         $.get(this.href, function(data){
+          $('body').removeClass('getting-page');
           $data = $(data);
           $('#primary').fadeOut(200, function() {
             $(this).replaceWith($data.find('#primary').hide().fadeIn(200))
