@@ -1,5 +1,28 @@
 jQuery(document).ready(function($){
 
+  var getpage = function() {
+      if(Modernizr.history) {
+        history.pushState({ path: this.path }, '', this.href)
+        $.get(this.href, function(data){
+          $data = $(data);
+          $('#primary').fadeOut(200, function() {
+            $(this).replaceWith($data.find('#primary').hide().fadeIn(200))
+          })
+          var new_img = $data.find('a.banner').children('img').hide();
+          new_img.bind('load', function() { 
+            $(this).unbind('load');
+            $('.banner').append(new_img)
+              .children('img').first()
+              .fadeOut(200, function() {
+                $(this).children('img').first().remove();
+              });
+            $(this).fadeIn(200);
+          });
+
+        });
+        return false;
+      }
+  }
 
   /* Left navigation - 
    *   clones a link as the first link in 
@@ -30,19 +53,9 @@ jQuery(document).ready(function($){
     .filter(function() {
       return $(this).siblings('ul').length === 0 
     })
-    .click(function() {
-      if(Modernizr.history) {
-        history.pushState({ path: this.path }, '', this.href)
-        $.get(this.href, function(data){
-          $data = $(data);
-          $('#primary').fadeOut(200, function() {
-            $(this).html($data.find('#primary'))
-            .fadeIn(200);
-          })
-        });
-        return false;
-      }
-    })
+    .click( getpage );
+
+    $('.banner').click( getpage );
 
     /* handle back navigation */
   var popped = ('state' in window.history), initialURL = location.href

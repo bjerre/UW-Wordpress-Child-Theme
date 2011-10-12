@@ -8,7 +8,7 @@
     if ( ! empty( $header_image ) ) :
   ?>
 
-  <a href="<?php bloginfo('url'); ?>">
+  <a class="banner" style="display:block;" href="<?php bloginfo('url'); ?>">
 
       <?php
         // The header image
@@ -18,9 +18,9 @@
             ( /* $src, $width, $height */ $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), array( HEADER_IMAGE_WIDTH, HEADER_IMAGE_WIDTH ) ) ) &&
             $image[1] >= HEADER_IMAGE_WIDTH ) :
           // Houston, we have a new header image!
-          echo get_the_post_thumbnail( $post->ID, 'post-thumbnail', array('class' => 'banner') );
+          echo get_the_post_thumbnail( $post->ID, 'post-thumbnail', array('class' => '') );
         else : ?>
-        <img class="banner" src="<?php header_image(); ?>" width="<?php echo HEADER_IMAGE_WIDTH; ?>" height="<?php echo HEADER_IMAGE_HEIGHT; ?>" alt="Banner graphic" />
+        <img src="<?php header_image(); ?>" width="<?php echo HEADER_IMAGE_WIDTH; ?>" height="<?php echo HEADER_IMAGE_HEIGHT; ?>" alt="Banner graphic" />
       <?php endif; ?>
 
   </a>

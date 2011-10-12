@@ -15,15 +15,7 @@
 get_header(); ?>
 
 
-  <?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
-
-      <div id="primary">
-
-  <?php else: ?>
-
-      <div id="primary" class="no-widgets">
-
-  <?php endif; ?>
+    <div id="primary">
 
 			<div id="content" role="main">
 

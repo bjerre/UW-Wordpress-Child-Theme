@@ -1,3 +1,13 @@
+.banner {
+  display: block;
+  position: relative;
+  height: 85px;
+}
+.banner img {
+  position:absolute;
+}
+
+/*
 #bgSliceMiddle img {
 		-webkit-transition: opacity 1s ease-in-out;
 		-moz-transition: opacity 1s ease-in-out;
@@ -9,4 +19,4 @@
 #bgSliceMiddle img.crossfade {
 		opacity:1;
 }
-
+*/

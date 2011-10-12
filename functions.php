@@ -34,7 +34,8 @@ function add_additional_css() {
       'twentyeleven' => 'twentyeleven.css',
       'header' => 'header.css',
       'footer' => 'footer.css',
-      'secondary' => 'secondary.css'
+      'secondary' => 'secondary.css',
+      'reveal'    => 'reveal.css'
     );
     foreach ($cssfiles as $name => $file) {
       $url = get_stylesheet_directory_uri() . "/css/$file";

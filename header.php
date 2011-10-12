@@ -76,7 +76,15 @@
 </style>
 
   </head>
-  <body>
+  <?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
+
+      <body>
+
+  <?php else: ?>
+
+      <body class="no-widgets">
+
+  <?php endif; ?>
   
 <?php get_template_part('topnav'); ?>
 
