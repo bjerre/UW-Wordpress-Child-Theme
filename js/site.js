@@ -4,7 +4,6 @@ jQuery(document).ready(function($){
       if(Modernizr.history) {
         if( this.href == location.href ) return false;
         $('body').addClass('getting-page');
-        $('#primary').fadeTo(100, 0.3);
         history.pushState({ path: this.path }, '', this.href)
         $.get(this.href, function(data){
           $('body').removeClass('getting-page');
