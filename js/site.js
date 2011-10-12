@@ -1,5 +1,6 @@
 jQuery(document).ready(function($){
 
+
   /* Left navigation - 
    *   clones a link as the first link in 
    *   the accordion
@@ -30,27 +31,26 @@ jQuery(document).ready(function($){
       return $(this).siblings('ul').length === 0 
     })
     .click(function() {
-      menu.find('.current_menu_item').removeClass('current_menu_item');
-      history.pushState({ path: this.path }, '', this.href)
-      $.get(this.href, function(data){
-        $data = $(data);
-        $('#primary').fadeOut(200, function() {
-          $(this).html($data.find('#primary'))
-          .fadeIn(200);
-        })
-        var img = $('img.banner');
-        $data.find('img.banner').insertAfter(img.get(0));
-        img.remove();
-        img = $('img.banner').get(0);
-        img.onload = function() {
-          $(this).addClass('crossfade');
-        }
-      });
-      return false;
+      if(Modernizr.history) {
+        history.pushState({ path: this.path }, '', this.href)
+        $.get(this.href, function(data){
+          $data = $(data);
+          $('#primary').fadeOut(200, function() {
+            $(this).html($data.find('#primary'))
+            .fadeIn(200);
+          })
+        });
+        return false;
+      }
     })
 
     /* handle back navigation */
+  var popped = ('state' in window.history), initialURL = location.href
   $(window).bind('popstate', function() {
+      var initialPop = !popped && location.href == initialURL
+      popped = true
+      if ( initialPop ) return
+    
       $.get(location.pathname, function(data){
         $data = $(data);
         $('#primary').fadeOut(200, function() {
