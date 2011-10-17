@@ -1571,12 +1571,7 @@ section.recent-posts .other-recent-posts li:after {
 	margin: 0 0 2.2em;
 }
 .widget-title {
-	color: #666;
-	font-size: 10px;
-	font-weight: 500;
-	letter-spacing: 0.1em;
-	line-height: 2.6em;
-	text-transform: uppercase;
+
 }
 .widget ul {
 	font-size: 15px;
@@ -1682,6 +1677,7 @@ section.ephemera .entry-title a span {
 .widget_calendar #wp-calendar td,
 .widget_calendar #wp-calendar th {
 	text-align: center;
+	padding: 0;
 }
 .widget_calendar #wp-calendar caption {
 	font-size: 11px;

@@ -1,7 +1,9 @@
 jQuery(document).ready(function($){
 
-  var getpage = function() {
+  $.fn.proxyFade = function() {
+    return $(this).each(function() {
       if(Modernizr.history) {
+        event.preventDefault();
         if( this.href == location.href ) return false;
         $('body').addClass('getting-page');
         history.pushState({ path: this.path }, '', this.href)
@@ -30,7 +32,8 @@ jQuery(document).ready(function($){
         });
         return false;
       }
-  }
+  });
+  };
 
   /* Left navigation - 
    *   clones a link as the first link in 
@@ -61,10 +64,12 @@ jQuery(document).ready(function($){
     .filter(function() {
       return $(this).siblings('ul').length === 0 
     })
-    .click( getpage );
+    .click( function() {
+      $(this).proxyFade();
+    });
 
-    $('.banner').click( getpage );
-    $('.entry-title a').click(getpage);
+    $('.banner').click(function() { $(this).proxyFade(); });
+    $('.entry-title a').live('click', function() { $(this).proxyFade(); });
 
     /* handle back navigation */
   var popped = ('state' in window.history), initialURL = location.href

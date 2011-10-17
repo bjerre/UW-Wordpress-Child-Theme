@@ -63,7 +63,16 @@ input.wTextInput {
 	background-image:linear-gradient(top, #674DAD, #56477F);
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#674DAD', endColorstr='#56477F', GradientType=0);
 }
-
+.actions {
+    background: none;
+    border-top: 0 none;
+}
+.actions .btn:hover {
+    color: #d3d3d3;
+}
+.actions #submit {
+	width: 100px
+}
 /* override twentyeleven css */
 
 #content {
@@ -271,7 +280,7 @@ h2.widgettitle {
 ************************************************/
 
 .no-widgets #content {
-	width: 655px;	
+	width: 590px;	
 }
 .no-widgets #primary {
 	width: 615px;
@@ -299,7 +308,7 @@ h2.widgettitle {
 #secondary {
     float: left;
     margin: 20px 0 0;
-    padding: 0 0 0 55px;
+    padding: 0 0 0 50px;
     width: 161px;
 }
 
