@@ -532,12 +532,23 @@ function add_additional_js() {
 }
 
 /**
+ * UW widgets on sidebar 
+ *   only echos out widgets if there are active widgets
+ */
+
+function get_widgets() {
+  if ( is_active_sidebar( 'sidebar-1' ) ){
+    get_sidebar();
+  }
+}
+
+
+/**
  * UW Custom form template
  */
 
 add_filter('comment_form_default_fields', 'uw_form_fields');
 add_filter('comment_form_field_comment',  'uw_form_field_comment');
-//add_action('comment_form_after_fields', 'uw_remove_comment_help');
 function uw_form_fields($fields) {
 
   $commenter = wp_get_current_commenter();
@@ -563,9 +574,6 @@ function uw_form_field_comment($comment_field) {
             <label for='comment'>Comment</label>
             <div class='input'>
               <textarea class='xxlarge' id='comment' name='comment' rows='3'></textarea>
-              <span class='help-block'>
-              You may use these HTML tags and attributes: <code>a abbr acrynym b blockquote cite code del em i  q strike strong</code>
-              </span>
             </div>
           </div>
   ";

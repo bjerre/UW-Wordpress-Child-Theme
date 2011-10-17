@@ -597,7 +597,7 @@ a:hover {
 }
 .entry-content,
 .entry-summary {
-	/*padding: 1.625em 0 0;*/
+	padding: .325em 0 0;
 }
 .entry-content h1,
 .entry-content h2,
@@ -873,7 +873,6 @@ a:active img[class*="wp-image-"],
 .entry-header .comments-link a:hover,
 .entry-header .comments-link a:focus,
 .entry-header .comments-link a:active {
-	background-color: #1982d1;
 	color: #fff;
 	color: rgba(255,255,255,0.8);
 }

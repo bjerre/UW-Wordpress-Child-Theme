@@ -64,6 +64,7 @@ jQuery(document).ready(function($){
     .click( getpage );
 
     $('.banner').click( getpage );
+    $('.entry-title a').click(getpage);
 
     /* handle back navigation */
   var popped = ('state' in window.history), initialURL = location.href
