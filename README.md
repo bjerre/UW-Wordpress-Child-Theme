@@ -2,8 +2,8 @@
 
 ## About
 
-This theme is a child theme of the default TwentyEleven Wordpress theme.
-The goal is to keep all the TwentyEleven features while creating a branded theme.
+This theme is the updated UW Wordpress theme.
+The goal is to keep all the new TwentyEleven features while maintaining a branded theme.
 
 The UW Advancement theme is branched here since 0.2.0
 
