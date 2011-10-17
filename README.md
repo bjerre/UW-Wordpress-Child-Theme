@@ -13,6 +13,12 @@ The UW Advancement theme is branched here since 0.2.0
 
 ## History
 
+### 0.3.0 - Convert to full theme
+  - Theme is no longer a child theme for TwentyEleven
+  - HTML5 navigation for compatible browsers
+  - Featured images for posts and pages
+  - Custom background image for site
+
 ### 0.2.0 - Initial branding
   - completed base css and javascript
   - widgets are functional
