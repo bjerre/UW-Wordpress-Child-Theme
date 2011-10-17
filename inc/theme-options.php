@@ -372,9 +372,6 @@ function uwtheme_print_link_color_style() {
 		.entry-header .comments-link a:hover,
 		.entry-header .comments-link a:focus,
 		.entry-header .comments-link a:active,
-		.feature-slider a.active {
-			background-color: <?php echo $link_color; ?>;
-		}
 	</style>
 <?php
 }

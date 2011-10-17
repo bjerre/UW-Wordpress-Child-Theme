@@ -1,7 +1,6 @@
 jQuery(document).ready(function($){
 
   var getpage = function() {
-    return true;
       if(Modernizr.history) {
         if( this.href == location.href ) return false;
         $('body').addClass('getting-page');
@@ -69,7 +68,6 @@ jQuery(document).ready(function($){
     /* handle back navigation */
   var popped = ('state' in window.history), initialURL = location.href
   $(window).bind('popstate', function() {
-    return true;
       var initialPop = !popped && location.href == initialURL
       popped = true
       if ( initialPop ) return
