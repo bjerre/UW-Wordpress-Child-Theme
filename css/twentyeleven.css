@@ -1590,7 +1590,6 @@ section.recent-posts .other-recent-posts li:after {
 	font-size: 13px;
 }
 .widget a {
-	font-weight: bold;
 	text-decoration: none;
 }
 .widget a:hover,
@@ -1845,7 +1844,7 @@ a.comment-reply-link > span {
 .commentlist > li.bypostauthor .comment-meta a:hover {
 }
 .commentlist > li.bypostauthor:before {
-	content: url(images/comment-arrow-bypostauthor.png);
+	content: url(../images/comment-arrow-bypostauthor.png);
 }
 
 /* Post Author threaded comments */

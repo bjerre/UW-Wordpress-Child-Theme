@@ -545,10 +545,12 @@ function get_widgets() {
 
 /**
  * UW Custom form template
+ * Functions for the the field, textarea and submit button
  */
 
 add_filter('comment_form_default_fields', 'uw_form_fields');
 add_filter('comment_form_field_comment',  'uw_form_field_comment');
+add_filter('comment_form', 'uwtheme_comment_submit_button');
 function uw_form_fields($fields) {
 
   $commenter = wp_get_current_commenter();
@@ -579,6 +581,15 @@ function uw_form_field_comment($comment_field) {
   ";
     
   return $comment_field;
+}
+
+function uwtheme_comment_submit_button($html){
+
+	echo "
+          <div class='actions'>
+            <input class='btn primaryw type='submit' value='Post Comment' id='submit' name='submit'>
+          </div>
+  ";
 }
 
 /**

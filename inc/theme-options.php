@@ -91,7 +91,6 @@ function uwtheme_theme_options_add_page() {
 			'<ol>' .
 				'<li>' . __( '<strong>Color Scheme</strong>: You can choose a color palette of "Light" (light background with dark text) or "Dark" (dark background with light text) for your site.', 'uwtheme' ) . '</li>' .
 				'<li>' . __( '<strong>Link Color</strong>: You can choose the color used for text links on your site. You can enter the HTML color or hex code, or you can choose visually by clicking the "Select a Color" button to pick from a color wheel.', 'uwtheme' ) . '</li>' .
-				'<li>' . __( '<strong>Default Layout</strong>: You can choose if you want your site&#8217;s default layout to have a sidebar on the left, the right, or not at all.', 'uwtheme' ) . '</li>' .
 			'</ol>' .
 			'<p>' . __( 'Remember to click "Save Changes" to save any changes you have made to the theme options.', 'uwtheme' ) . '</p>' .
 			'<p><strong>' . __( 'For more information:', 'uwtheme' ) . '</strong></p>' .
@@ -126,32 +125,6 @@ function uwtheme_color_schemes() {
 	return apply_filters( 'uwtheme_color_schemes', $color_scheme_options );
 }
 
-/**
- * Returns an array of layout options registered for Twenty Eleven.
- *
- * @since 0.3.0
- */
-function uwtheme_layouts() {
-	$layout_options = array(
-		'content-sidebar' => array(
-			'value' => 'content-sidebar',
-			'label' => __( 'Content on left', 'uwtheme' ),
-			'thumbnail' => get_template_directory_uri() . '/inc/images/content-sidebar.png',
-		),
-		'sidebar-content' => array(
-			'value' => 'sidebar-content',
-			'label' => __( 'Content on right', 'uwtheme' ),
-			'thumbnail' => get_template_directory_uri() . '/inc/images/sidebar-content.png',
-		),
-		'content' => array(
-			'value' => 'content',
-			'label' => __( 'One-column, no sidebar', 'uwtheme' ),
-			'thumbnail' => get_template_directory_uri() . '/inc/images/content.png',
-		),
-	);
-
-	return apply_filters( 'uwtheme_layouts', $layout_options );
-}
 
 /**
  * Returns the default options for Twenty Eleven.
@@ -162,11 +135,7 @@ function uwtheme_get_default_theme_options() {
 	$default_theme_options = array(
 		'color_scheme' => 'light',
 		'link_color'   => uwtheme_get_default_link_color( 'light' ),
-		'theme_layout' => 'content-sidebar',
 	);
-
-	if ( is_rtl() )
- 		$default_theme_options['theme_layout'] = 'sidebar-content';
 
 	return apply_filters( 'uwtheme_default_theme_options', $default_theme_options );
 }
@@ -258,27 +227,6 @@ function uwtheme_theme_options_render_page() {
 					</td>
 				</tr>
 
-				<tr valign="top" class="image-radio-option theme-layout"><th scope="row"><?php _e( 'Default Layout', 'uwtheme' ); ?></th>
-					<td>
-						<fieldset><legend class="screen-reader-text"><span><?php _e( 'Color Scheme', 'uwtheme' ); ?></span></legend>
-						<?php
-							foreach ( uwtheme_layouts() as $layout ) {
-								?>
-								<div class="layout">
-								<label class="description">
-									<input type="radio" name="uwtheme_theme_options[theme_layout]" value="<?php echo esc_attr( $layout['value'] ); ?>" <?php checked( $options['theme_layout'], $layout['value'] ); ?> />
-									<span>
-										<img src="<?php echo esc_url( $layout['thumbnail'] ); ?>" width="136" height="122" alt="" />
-										<?php echo $layout['label']; ?>
-									</span>
-								</label>
-								</div>
-								<?php
-							}
-						?>
-						</fieldset>
-					</td>
-				</tr>
 			</table>
 
 			<?php submit_button(); ?>
@@ -308,10 +256,6 @@ function uwtheme_theme_options_validate( $input ) {
 	// Link color must be 3 or 6 hexadecimal characters
 	if ( isset( $input['link_color'] ) && preg_match( '/^#?([a-f0-9]{3}){1,2}$/i', $input['link_color'] ) )
 		$output['link_color'] = '#' . strtolower( ltrim( $input['link_color'], '#' ) );
-
-	// Theme layout must be in our array of theme layout options
-	if ( isset( $input['theme_layout'] ) && array_key_exists( $input['theme_layout'], uwtheme_layouts() ) )
-		$output['theme_layout'] = $input['theme_layout'];
 
 	return apply_filters( 'uwtheme_theme_options_validate', $output, $input, $defaults );
 }
@@ -376,31 +320,3 @@ function uwtheme_print_link_color_style() {
 <?php
 }
 add_action( 'wp_head', 'uwtheme_print_link_color_style' );
-
-/**
- * Adds UW Theme layout classes to the array of body classes.
- *
- * @since 0.3.0
- */
-function uwtheme_layout_classes( $existing_classes ) {
-	$options = uwtheme_get_theme_options();
-	$current_layout = $options['theme_layout'];
-
-	if ( in_array( $current_layout, array( 'content-sidebar', 'sidebar-content' ) ) )
-		$classes = array( 'two-column' );
-	else
-		$classes = array( 'one-column' );
-
-	if ( 'content-sidebar' == $current_layout )
-		$classes[] = 'right-sidebar';
-	elseif ( 'sidebar-content' == $current_layout )
-		$classes[] = 'left-sidebar';
-	else
-		$classes[] = $current_layout;
-
-	$classes = apply_filters( 'uwtheme_layout_classes', $classes, $current_layout );
-
-	return array_merge( $existing_classes, $classes );
-}
-add_filter( 'body_class', 'uwtheme_layout_classes' );
-
