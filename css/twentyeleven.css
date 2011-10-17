@@ -11,19 +11,9 @@
 #access div {
 	margin: 0 7.6%;
 }
-#primary {
-	float: left;
-	margin: 0 -26.4% 0 0;
-	width: 100%;
-}
 #content {
 	margin: 0 34% 0 7.6%;
 	width: 58.4%;
-}
-#secondary {
-	float: right;
-	margin-right: 7.6%;
-	width: 18.8%;
 }
 
 /* Singular */
@@ -293,7 +283,7 @@ blockquote {
 	font-family: Georgia, "Bitstream Charter", serif;
 	font-style: italic;
 	font-weight: normal;
-	margin: 0 3em;
+	margin: 3em;
 }
 blockquote em, blockquote i, blockquote cite {
 	font-style: normal;
@@ -607,7 +597,7 @@ a:hover {
 }
 .entry-content,
 .entry-summary {
-	padding: 1.625em 0 0;
+	/*padding: 1.625em 0 0;*/
 }
 .entry-content h1,
 .entry-content h2,
@@ -865,11 +855,11 @@ a:active img[class*="wp-image-"],
 
 /* Comments link */
 .entry-header .comments-link a {
-	background: #eee url(../images/comment-bubble.png) no-repeat;
-	color: #666;
+	background: #fff url(../images/comment_bubble.png) no-repeat;
+	color: #fff;
 	font-size: 13px;
 	font-weight: normal;
-	line-height: 35px;
+	line-height: 25px;
 	overflow: hidden;
 	padding: 0 0 0;
 	position: absolute;
@@ -1082,7 +1072,7 @@ blockquote.pull {
 	margin-bottom: 0;
 }
 .indexed.format-image footer.entry-meta {
-	background: #ddd;
+	background: #f9f9f9;
 	margin-top: -7px;
 	padding: 20px 30px;
 	overflow: hidden;

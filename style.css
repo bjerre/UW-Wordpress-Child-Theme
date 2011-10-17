@@ -9,8 +9,11 @@ Version:        0.2.0
 */
 
 /* override bootstrap */
-body {
-  font-size:12px;
+h1 a, h1, .entry-title, .entry-title a {
+    color: #39275B;
+    font-weight: normal;
+    letter-spacing: -0.04em;
+    font: 150%/18px "Lucida Grande","Lucida Sans Unicode",Helvetica,Arial,Verdana,sans-serif;
 }
 #leftNav a:hover {
     color: #999999;
@@ -28,6 +31,22 @@ h1 a, h1, .entry-title, .entry-title a {
 a {
     color: #0F79A3;
 }
+input.wTextInput {
+	padding: 0;
+}
+.btn.primary {
+	background-color:#56477F;
+	background-repeat:repeat-x;
+	background-image:-khtml-gradient(linear, left top, left bottom, from(#674DAD), to(#56477F));
+	background-image:-moz-linear-gradient(top, #674DAD, #56477F);
+	background-image:-ms-linear-gradient(top, #674DAD, #56477F);
+	background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%, #674DAD), color-stop(100%, #56477F));
+	background-image:-webkit-linear-gradient(top, #674DAD, #56477F);
+	background-image:-o-linear-gradient(top, #674DAD, #56477F);
+	background-image:linear-gradient(top, #674DAD, #56477F);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#674DAD', endColorstr='#56477F', GradientType=0);
+}
+
 /* override twentyeleven css */
 
 #content {
@@ -45,8 +64,10 @@ a {
   height: 35px;
   width:80%;
 }
-
-/* Begin UW Theme CSS */
+.entry-format {
+	display: none; 
+}
+ /* Begin UW Theme CSS */
 #leftNav {
   width: 230px;
   float: left;
@@ -232,16 +253,25 @@ h2.widgettitle {
 *	Structure									*
 ************************************************/
 
+.no-widgets #content {
+	width: 655px;	
+}
 .no-widgets #primary {
-	width: 650px;	
+	width: 655px;
+}
+#content {
+    float: left;
+    margin: 0;
+    width: 430px;
 }
 #primary {
+  margin: 15px 0 0 0;
+  width: 430px;
   float: left;
-  margin: 0;
-  width: 450px;
+  overflow: hidden;
 }
 #leftNav {
-    margin-right: 25px;
+    margin-right: 35px;
 }
 .leftNavBackground {
     min-height: 200px;
@@ -249,7 +279,12 @@ h2.widgettitle {
 .menu {
 	padding: 0 0 0 20px;
 }
-
+#secondary {
+    float: left;
+    margin: 20px 0 0;
+    padding: 0 0 0 45px;
+    width: 170px;
+}
 
 /************************************************
 *	Secondary Override							*
@@ -272,7 +307,9 @@ h2.widgettitle {
     display: inline-block;
     font-size: 100%;
     line-height: 130%;
-    padding: 3px 10px;
+    padding: 3px 10px 5px;
+    width: 100%;
+    text-shadow: 1px 1px 3px #FFFFFF;
 }
 .children .current_page_item > a {
     background: none;

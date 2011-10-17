@@ -1,10 +1,14 @@
 @charset "utf-8";
 /*-- Reset --*/
-
+body {
+	font-size:12px;
+	background-image: url(../images/bg_portal.gif);
+	background-repeat: repeat-x;
+}
 li {margin: 0; padding:0;}
 
 #bg {
-	background-image: url(../images/bg_portal.gif);
+	background-image: url(../images/bg_portal.png);
 	background-repeat: repeat-x;
 }
 
@@ -19,6 +23,7 @@ li {margin: 0; padding:0;}
 	background-image: url(../images/bgSliceMiddle2.png);
 	background-repeat: repeat-y;
 	overflow: hidden;
+	min-height: 700px;
 }
 #bottomRoundedLeft {
 	background: url(../images/bgSliceBottom.png) left bottom;
