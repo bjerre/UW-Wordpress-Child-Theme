@@ -57,8 +57,9 @@ jQuery(document).ready(function($){
     }).addClass('selectedArrow')
     .children('a')
       .click(function(){
-        if ( $(this).parent().hasClass('trikiti')) return false;
-        $(this).parent()
+        var $this = $(this);
+        if ( $this.parent().hasClass('trikiti')) return false;
+        $this.parent()
           .toggleClass('trikiti').children('ul').slideToggle(200)
            .end()
           .siblings('.trikiti').toggleClass('trikiti').children('ul').slideToggle(200)
@@ -72,9 +73,10 @@ jQuery(document).ready(function($){
       return $(this).siblings('ul').length === 0 
     })
     .click( function() {
-      menu.data('cache', $(this));
-      $(this).proxyFade()
-        .closest('ul').closest('li').siblings('.trikiti').removeClass('trikiti');
+      var $this = $(this),
+          classname = ( $this.closest('ul').hasClass('children') ) ? '' : 'trikiti';
+      $this.proxyFade()
+        .parent().closest('li').addClass(classname).siblings('.trikiti').removeClass('trikiti').children('ul').slideToggle(200);
     });
 
     $('.banner').click(function() { $(this).proxyFade(); });
