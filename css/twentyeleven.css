@@ -776,7 +776,6 @@ img#wpstats {
 img[class*="align"],
 img[class*="wp-image-"],
 #content .gallery .gallery-icon img {/* Add fancy borders to all WordPress-added images but not things like badges and icons and the like */
-	border: 1px solid #ddd;
 	padding: 6px;
 }
 .wp-caption img {
@@ -1571,7 +1570,11 @@ section.recent-posts .other-recent-posts li:after {
 	margin: 0 0 2.2em;
 }
 .widget-title {
-
+    background: url("../images/rightNav_bg.png") no-repeat scroll center bottom transparent;
+    color: #39275B;
+    font-size: 14px;
+    margin: 0 0 10px;
+    padding: 0 0 10px;
 }
 .widget ul {
 	font-size: 15px;
@@ -1587,18 +1590,21 @@ section.recent-posts .other-recent-posts li:after {
 .widget a {
 	text-decoration: none;
 }
-.widget a:hover,
+labela:hover,
 .widget a:focus,
 .widget a:active {
 	text-decoration: underline;
 }
-
+.widget label {
+	text-align: left;
+	margin: 0 0 5px;
+}
 /* Search Widget */
 .widget_search form {
 	margin: 0 0 1.625em;
 }
 .widget_search #s {
-	width: 77%;
+	width: 59%;
 }
 .widget_search #searchsubmit {
 	background: #ddd;
@@ -1606,11 +1612,11 @@ section.recent-posts .other-recent-posts li:after {
 	-webkit-box-shadow: inset 0px -1px 1px rgba(0, 0, 0, 0.09);
 	-moz-box-shadow: inset 0px -1px 1px rgba(0, 0, 0, 0.09);
 	box-shadow: inset 0px -1px 1px rgba(0, 0, 0, 0.09);
-	color: #888;
+	color: #555;
 	font-size: 13px;
 	line-height: 25px;
 	position: relative;
-	top: -2px;
+	text-shadow: 1px 1px 2px #FFFFFF;
 }
 .widget_search #searchsubmit:active {
 	background: #1982d1;
