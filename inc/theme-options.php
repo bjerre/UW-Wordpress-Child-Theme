@@ -107,6 +107,7 @@ add_action( 'admin_menu', 'uwtheme_theme_options_add_page' );
  * @since 0.3.0
  */
 function uwtheme_color_schemes() {
+  /*
 	$color_scheme_options = array(
 		'light' => array(
 			'value' => 'light',
@@ -121,6 +122,8 @@ function uwtheme_color_schemes() {
 			'default_link_color' => '#e4741f',
 		),
 	);
+   */
+  $color_scheme_options = array();
 
 	return apply_filters( 'uwtheme_color_schemes', $color_scheme_options );
 }
@@ -147,7 +150,7 @@ function uwtheme_get_default_theme_options() {
  *
  * @param $string $color_scheme Color scheme. Defaults to the active color scheme.
  * @return $string Color.
-*/
+ */
 function uwtheme_get_default_link_color( $color_scheme = null ) {
 	if ( null === $color_scheme ) {
 		$options = uwtheme_get_theme_options();
