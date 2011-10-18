@@ -131,7 +131,7 @@ li {margin: 0; padding:0;}
     margin: 0;
     padding: 1px 0;
 }
-.selectedAccordion, .current_page_item > a, .current_page_ancestor > a {
+.trikiti/*, .selectedAccordion, .current_page_item > a, .current_page_ancestor > a*/ {
     background: url("../images/arrow_h3.gif") no-repeat scroll -1px 5px transparent;
     font-weight: bold;
     padding-left: 10px;
@@ -148,7 +148,7 @@ li {margin: 0; padding:0;}
 .selectedArrow:hover {
 	background:url(../images/arrow_down.gif) right center no-repeat;
 }
-#menu > li >  a:hover, #menu > li > a:focus {
+.trikiti:hover, #menu > li >  a:hover, #menu > li > a:focus {
 	background:url(../images/arrow_h3.gif) -1px 5px no-repeat;
 	outline:none;
 }

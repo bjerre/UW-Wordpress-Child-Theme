@@ -46,6 +46,9 @@ jQuery(document).ready(function($){
     .filter( function() {
       var $this = $(this),
           ul = $this.children('ul');
+      if( $this.hasClass('current_page_item') ) {
+        $this.removeClass('current_page_item').closest('ul').closest('li').addClass('trikiti');
+      }
       if (ul.length == 1) {
         var el = $this.clone();
         el.children('ul').remove().end().prependTo(ul);
@@ -54,8 +57,12 @@ jQuery(document).ready(function($){
     }).addClass('selectedArrow')
     .children('a')
       .click(function(){
+        if ( $(this).parent().hasClass('trikiti')) return false;
         $(this).parent()
           .toggleClass('trikiti').children('ul').slideToggle(200)
+           .end()
+          .siblings('.trikiti').toggleClass('trikiti').children('ul').slideToggle(200)
+
         return false;
       })
     /* popstate */
@@ -65,13 +72,15 @@ jQuery(document).ready(function($){
       return $(this).siblings('ul').length === 0 
     })
     .click( function() {
-      $(this).proxyFade();
+      menu.data('cache', $(this));
+      $(this).proxyFade()
+        .closest('ul').closest('li').siblings('.trikiti').removeClass('trikiti');
     });
 
     $('.banner').click(function() { $(this).proxyFade(); });
     $('.entry-title a').live('click', function() { $(this).proxyFade(); });
 
-    /* handle back navigation */
+/*----- handle back navigation -----*/
   var popped = ('state' in window.history), initialURL = location.href
   $(window).bind('popstate', function() {
       var initialPop = !popped && location.href == initialURL

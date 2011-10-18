@@ -326,7 +326,7 @@ h2.widgettitle {
     margin-bottom: 10px;
     padding-bottom: 18px;
 }
-.navSectionHead a, .menu > li.navSectionHead a:hover {
+.trikiti, .navSectionHead a, .menu > li.navSectionHead a:hover {
     background: url("images/arrow_h3.gif") no-repeat scroll left 7px transparent;
 }
 .menu a {
