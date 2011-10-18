@@ -649,10 +649,4 @@ if (!function_exists('uw_dropdowns_need_updating')) {
     }
 }
 
-class My_Walker_Nav_Menu extends Walker_Nav_Menu {
-  function start_lvl(&$output, $depth) {
-    $indent = str_repeat("\t", $depth);
-    $output .= "\n$indent<ul class=\"children\">\n";
-  }
-}
 ?>

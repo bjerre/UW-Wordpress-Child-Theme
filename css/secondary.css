@@ -136,7 +136,7 @@ li {margin: 0; padding:0;}
     font-weight: bold;
     padding-left: 10px;
 }
-/*.page_item ul*/ ul.children {
+ul.children, ul.sub-menu {
     display: none;
 }
 .current_page_ancestor ul, .current_page_item ul {

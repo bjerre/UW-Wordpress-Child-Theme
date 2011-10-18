@@ -39,14 +39,14 @@ jQuery(document).ready(function($){
    *   clones a link as the first link in 
    *   the accordion
    */
-  var menu = $('#leftNav').find('.menu'), clicked = [];
+  var menu = $('#leftNav').find('.menu'), clicked = [], classname = '';
   menu.find('li')
     .first().addClass('selectedAccordion navSectionHead')
       .end()
     .filter( function() {
       var $this = $(this),
-          ul = $this.children('ul'),
-          classname = ( menu.attr('id') == 'menu-custom-menu' ) ? 'current-menu-item' : 'current_page_item';
+          ul = $this.children('ul');
+      classname = ( menu.attr('id') == 'menu-custom-menu' ) ? 'current-menu-item' : 'current_page_item';
 
       if( $this.hasClass(classname) ) {
         var el = ($this.closest('ul').closest('li').length > 0 ) ? $this.closest('ul').closest('li') : $this;
@@ -54,6 +54,9 @@ jQuery(document).ready(function($){
       }
       if (ul.length == 1) {
         var el = $this.clone().removeClass('trikiti');
+        if ( $this.closest('li').hasClass('trikiti') ) {
+          ul.show(); 
+        }
         el.children('ul').remove().end().prependTo(ul);
         return true;
       }
@@ -76,10 +79,8 @@ jQuery(document).ready(function($){
       return $(this).siblings('ul').length === 0 
     })
     .click( function() {
-      var $this = $(this),
-          classname = ( $this.closest('ul').hasClass('children') ) ? '' : 'trikiti';
-      $this.proxyFade()
-        .parent().closest('li').addClass(classname).siblings('.trikiti').removeClass('trikiti').children('ul').slideToggle(200);
+      $(this).proxyFade()
+        .parent().closest('li').siblings('.trikiti').removeClass('trikiti').children('ul').slideToggle(200);
     });
 
     $('.banner').click(function() { $(this).proxyFade(); });
