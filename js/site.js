@@ -45,12 +45,15 @@ jQuery(document).ready(function($){
       .end()
     .filter( function() {
       var $this = $(this),
-          ul = $this.children('ul');
-      if( $this.hasClass('current_page_item') ) {
-        $this.removeClass('current_page_item').closest('ul').closest('li').addClass('trikiti');
+          ul = $this.children('ul'),
+          classname = ( menu.attr('id') == 'menu-custom-menu' ) ? 'current-menu-item' : 'current_page_item';
+
+      if( $this.hasClass(classname) ) {
+        var el = ($this.closest('ul').closest('li').length > 0 ) ? $this.closest('ul').closest('li') : $this;
+        el.removeClass(classname).addClass('trikiti');
       }
       if (ul.length == 1) {
-        var el = $this.clone();
+        var el = $this.clone().removeClass('trikiti');
         el.children('ul').remove().end().prependTo(ul);
         return true;
       }
