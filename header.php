@@ -36,7 +36,6 @@
 
 	?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
-<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <!--[if lt IE 9]>
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
@@ -55,6 +54,14 @@
 	 */
 	wp_head();
 ?>
+<!-- The line below starts the conditional comment -->
+<!--[if IE]>
+<style type="text/css">
+  body{ behavior:url("<?php bloginfo('template_directory'); ?>csshover.htc"); }
+</style>
+<![endif]--> <!-- This ends the conditional comment -->
+    
+<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 </head>
   <?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
 
