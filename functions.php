@@ -592,6 +592,11 @@ function uwtheme_comment_submit_button($html){
           </div>
   ";
 }
+/**
+ * Register Widgets
+ */
+
+include_once('widgets/communityphotos.php');
 
 /**
  * Grabs the dropdown navigation off of http://uw.edu (UW Homepage)

@@ -1,0 +1,97 @@
+.communityphotos p {
+	background:url("../widgets/extlink.gif") no-repeat scroll right 4px transparent;
+	color:#555;
+	font-size:60%;
+	font-weight:bold;
+	margin:0;
+	padding:3px 15px 0 0;
+	text-align:right;
+	text-transform:uppercase;
+}
+.communityphotos p.communityphotosInst {
+	background:url("../widgets/news/expand.gif") no-repeat scroll 0 9px transparent;
+	border-right:1px solid #DDDDDD;
+	clear:both;
+	color:#888888;
+	font-size:69%;
+	line-height:10px;
+	padding:4px 0 0 21px;
+	text-align:left;
+	width:60px;
+	margin-right:10px;
+	margin-top:8px;
+	float:left;
+}
+.communityphotos a {
+	float: left;
+	margin: 5px 5px 0 0;
+	border: 1px solid #d2d2d2; 
+	position: relative;
+	display: block;
+}
+.communityphotos a:hover div {
+  -moz-border-radius:5px 5px 5px 5px;
+	border-radius: 5px;
+	-moz-box-shadow:3px 2px 10px #777777;
+	box-shadow:3px 2px 10px #777777;
+	-webkit-box-shadow:3px 2px 10px #777777;
+	background-color:#FFF;
+	border:1px solid #DDD;
+	display:block;
+	left:-105px;
+	padding:5px;
+	position:absolute;
+	bottom:23px;
+	z-index:99999
+}
+#leftNav .communityphotosMore {
+	background: none !important;
+	padding: 3px 0 0 15px;
+	float: left;
+	margin-top: 9px !important;
+}
+#portlets-left {
+	padding-top:0;
+}
+.portlet-left {
+	clear:both;
+	padding-top:25px;
+}
+.communityphotosMore a {
+	background:url("../image/arrow_more.gif") no-repeat scroll left 0 transparent;
+	border:medium none transparent;
+	color:#777777 !important;
+	float:right;
+	font-family:Arial,Helvetica,sans-serif;
+	font-size:113%;
+	font-weight:bold;
+	line-height:14px;
+	margin:0;
+	padding:1px 12px 1px 8px;
+	text-decoration:none;
+	text-transform:uppercase;
+}
+.communityphotos div {
+	display: none;
+} 
+.communityphotos span {
+	width: 30px;
+	height: 30px;
+	display: block;
+	overflow: hidden;
+}
+.communityphotos a:hover {
+	display:block;
+	cursor: pointer;
+	cursor: hand;
+}
+.communityphotos span img {
+	height:40px;
+}
+.communityphotos {
+	width:170px;
+}
+.communityphotos h2 {
+	font-size:115%;
+	text-transform:uppercase;
+}
