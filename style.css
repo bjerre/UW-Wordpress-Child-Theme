@@ -93,6 +93,37 @@ input.wTextInput {
 .entry-format {
 	display: none; 
 }
+ /* Prev-Next Buttons */
+h3.assistive-text {
+	display: none;
+}
+#nav-single .meta-nav {
+	display: none;
+}
+.nav-next a {
+ 	background: url("images/arrow_h3.gif") no-repeat scroll right 7px transparent;
+	padding: 4px 11px 4px 5px;
+}
+.nav-previous a {
+	background: url("images/arrow_h3_rev.gif") no-repeat scroll left 7px transparent;
+	padding: 4px 0 4px 13px;
+}
+#nav-single .nav-previous, #nav-single .nav-next {
+    background-color: #FFFFFF;
+    border-radius: 20px 20px 20px 20px;
+    box-shadow: 0 0 3px #e3e3e3;
+    display: block;
+    float: left;
+    margin: 5px 4px 0 5px;
+    padding: 1px 9px;
+}
+.post {
+	clear: both
+}
+#nav-single {
+	text-align: left;
+	top:0;
+}
  /* Begin UW Theme CSS */
 #leftNav {
   width: 230px;
