@@ -149,7 +149,7 @@ ul.children, ul.sub-menu {
 	background:url(../images/arrow_down.gif) right center no-repeat;
 }
 .trikiti:hover, #menu > li >  a:hover, #menu > li > a:focus {
-	background:url(../images/arrow_h3.gif) -1px 5px no-repeat;
+	background:url(../images/arrow_h3.gif) left 7px no-repeat;
 	outline:none;
 }
 .selectedAccordion > a {

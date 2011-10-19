@@ -7,11 +7,13 @@ The goal is to keep all the new TwentyEleven features while maintaining a brande
 
 The UW Advancement theme is branched here since 0.2.0
 
-## TODO 
-
-1. Analytics
-
 ## History
+
+### 0.4.0 - Finalized Navigation
+  - Page generated and custom menus both functional
+  - Added Community Photos widget
+  - HTML5 transition between posts
+  - Fixed bug that loaded style.css twice
 
 ### 0.3.0 - Convert to full theme
   - Theme is no longer a child theme for TwentyEleven
