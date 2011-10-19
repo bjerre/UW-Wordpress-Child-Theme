@@ -20,12 +20,13 @@ class CommunityPhotos extends WP_Widget {
     $rss = fetch_feed($URL);
     if (!is_wp_error( $rss ) ) { // Checks that the object is created correctly 
       // Figure out how many total items there are, but limit it to 5. 
+      $url = $rss->get_permalink();
       $maxitems = $rss->get_item_quantity(20); 
 
       // Build an array of all the items, starting with element 0 (first element).
       $rss_items = $rss->get_items(0, $maxitems); 
       
-      $content = "<div class='communityphotos'><h2>Community Photos</h2>";
+      $content = "<div class='communityphotos'><h3 class='widget-title'>Community Photos</h3>";
       foreach ($rss_items as $item) {
         $title = $item->get_title();
         $link = $item->get_link();
@@ -45,7 +46,6 @@ class CommunityPhotos extends WP_Widget {
       echo $before_widget . $content . $after_widget;
     }
 	}
-
 }
 add_action( 'widgets_init', 'load_community_photos' );
 function load_community_photos() {
