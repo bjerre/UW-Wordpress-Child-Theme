@@ -124,6 +124,10 @@ h3.assistive-text {
 	text-align: left;
 	top:0;
 }
+#slider {
+  position: relative;
+  margin-top: 52px;
+}
  /* Begin UW Theme CSS */
 #leftNav {
   width: 230px;

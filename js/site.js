@@ -6,7 +6,7 @@ jQuery(document).ready(function($){
         event.preventDefault();
         if( this.href == location.href ) return false;
         $('body').addClass('getting-page');
-        history.pushState({ path: this.path }, '', this.href)
+        history.pushState({ path: this.path }, '', this.href);
         $.get(this.href, function(data){
           $('body').removeClass('getting-page');
           $data = $(data);
