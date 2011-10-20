@@ -54,6 +54,7 @@ function uwtheme_setup() {
 	add_editor_style();
 
 	// Load up our theme options page and related code.
+	require( dirname( __FILE__ ) . '/inc/theme-faqs.php' );
 	require( dirname( __FILE__ ) . '/inc/theme-options.php' );
 
 	// Grab the Twenty Eleven's Ephemera widget.

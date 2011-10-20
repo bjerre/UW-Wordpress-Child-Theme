@@ -89,7 +89,6 @@ function uwtheme_theme_options_add_page() {
 
 	$help = '<p>' . __( 'Some themes provide customization options that are grouped together on a Theme Options screen. If you change themes, options may change or disappear, as they are theme-specific. Your current theme, Twenty Eleven, provides the following Theme Options:', 'uwtheme' ) . '</p>' .
 			'<ol>' .
-				'<li>' . __( '<strong>Color Scheme</strong>: You can choose a color palette of "Light" (light background with dark text) or "Dark" (dark background with light text) for your site.', 'uwtheme' ) . '</li>' .
 				'<li>' . __( '<strong>Link Color</strong>: You can choose the color used for text links on your site. You can enter the HTML color or hex code, or you can choose visually by clicking the "Select a Color" button to pick from a color wheel.', 'uwtheme' ) . '</li>' .
 			'</ol>' .
 			'<p>' . __( 'Remember to click "Save Changes" to save any changes you have made to the theme options.', 'uwtheme' ) . '</p>' .
@@ -107,7 +106,6 @@ add_action( 'admin_menu', 'uwtheme_theme_options_add_page' );
  * @since 0.3.0
  */
 function uwtheme_color_schemes() {
-  /*
 	$color_scheme_options = array(
 		'light' => array(
 			'value' => 'light',
@@ -122,9 +120,6 @@ function uwtheme_color_schemes() {
 			'default_link_color' => '#e4741f',
 		),
 	);
-   */
-  $color_scheme_options = array();
-
 	return apply_filters( 'uwtheme_color_schemes', $color_scheme_options );
 }
 
@@ -193,29 +188,6 @@ function uwtheme_theme_options_render_page() {
 			?>
 
 			<table class="form-table">
-
-				<tr valign="top" class="image-radio-option color-scheme"><th scope="row"><?php _e( 'Color Scheme', 'uwtheme' ); ?></th>
-					<td>
-						<fieldset><legend class="screen-reader-text"><span><?php _e( 'Color Scheme', 'uwtheme' ); ?></span></legend>
-						<?php
-							foreach ( uwtheme_color_schemes() as $scheme ) {
-								?>
-								<div class="layout">
-								<label class="description">
-									<input type="radio" name="uwtheme_theme_options[color_scheme]" value="<?php echo esc_attr( $scheme['value'] ); ?>" <?php checked( $options['color_scheme'], $scheme['value'] ); ?> />
-									<input type="hidden" id="default-color-<?php echo esc_attr( $scheme['value'] ); ?>" value="<?php echo esc_attr( $scheme['default_link_color'] ); ?>" />
-									<span>
-										<img src="<?php echo esc_url( $scheme['thumbnail'] ); ?>" width="136" height="122" alt="" />
-										<?php echo $scheme['label']; ?>
-									</span>
-								</label>
-								</div>
-								<?php
-							}
-						?>
-						</fieldset>
-					</td>
-				</tr>
 
 				<tr valign="top"><th scope="row"><?php _e( 'Link Color', 'uwtheme' ); ?></th>
 					<td>
