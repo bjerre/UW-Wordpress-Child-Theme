@@ -589,7 +589,7 @@ function uwtheme_comment_submit_button($html){
 
 	echo "
           <div class='actions'>
-            <input class='btn primaryw type='submit' value='Post Comment' id='submit' name='submit'>
+            <input class='btn' type='submit' value='Post Comment' id='submit' name='submit'>
           </div>
   ";
 }
@@ -598,6 +598,7 @@ function uwtheme_comment_submit_button($html){
  */
 
 include_once('widgets/communityphotos.php');
+include_once('widgets/uwmap.php');
 
 /**
  * Grabs the dropdown navigation off of http://uw.edu (UW Homepage)
