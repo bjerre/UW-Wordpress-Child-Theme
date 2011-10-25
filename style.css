@@ -19,7 +19,8 @@ h1 a, h1, .entry-title, .entry-title a {
     text-decoration: none;
 }
 .container {
-  width: 950px
+  width: 950px;
+  position: relative;
 }
 #leftNav h2, #rightInfo h2 {
 	font-size: 14px;
@@ -177,11 +178,32 @@ p.authoring {
 .banner {
 	padding: 25px 0 15px 38px;
 }
-.title {
-	display: none;
+#site-title {	
+    display: block;
+    left: 70px;
+    position: absolute;
+    top: 55px;
+    z-index: 1;
+}
+#site-title a {
+    color: #fff;
+    font-size: 32px;
+    font-weight: normal;
+    line-height: 36px;
+    text-decoration: none;
+    font-family: "Helvetica Neue",Arial,Helvetica,"Nimbus Sans L",sans-serif;
+    font-weight: bold;
 }
 .banner {
 	padding:25px 0 15px 38px;
+}
+#site-description {
+    margin: 0;
+    position: absolute;
+    top: 80px;
+    z-index: 1;
+    color: #FFFFFF;
+    font-weight: normal;
 }
 /************************************************
 *	Comments									*

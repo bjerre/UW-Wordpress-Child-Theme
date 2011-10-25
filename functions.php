@@ -78,7 +78,7 @@ function uwtheme_setup() {
 	// The next four constants set how UW Theme supports custom headers.
 
 	// The default header text color
-	define( 'HEADER_TEXTCOLOR', '000' );
+	define( 'HEADER_TEXTCOLOR', 'FFF' );
 
 	// By leaving empty, we allow for random image rotation.
 	define( 'HEADER_IMAGE', '' );
@@ -174,6 +174,7 @@ function uwtheme_admin_header_style() {
 	<style type="text/css">
 	.appearance_page_custom-header #headimg {
 		border: none;
+    position: relative;
 	}
 	#headimg h1,
 	#desc {
@@ -181,6 +182,9 @@ function uwtheme_admin_header_style() {
 	}
 	#headimg h1 {
 		margin: 0;
+    left: 21px;
+    position: absolute;
+    top: 10px;
 	}
 	#headimg h1 a {
 		font-size: 32px;
@@ -188,9 +192,12 @@ function uwtheme_admin_header_style() {
 		text-decoration: none;
 	}
 	#desc {
-		font-size: 14px;
 		line-height: 23px;
-		padding: 0 0 3em;
+    font-size: 13px;
+    left: 20px;
+    padding: 0;
+    position: absolute;
+    top: 39px;
 	}
 	<?php
 		// If the user has set a custom color for the text use that
@@ -206,6 +213,12 @@ function uwtheme_admin_header_style() {
 		height: auto;
 		width: 100%;
 	}
+  #headimg img {
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+
 	</style>
 <?php
 }

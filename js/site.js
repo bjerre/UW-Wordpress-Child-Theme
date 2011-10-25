@@ -10,6 +10,7 @@ jQuery(document).ready(function($){
         $.get(this.href, function(data){
           $('body').removeClass('getting-page');
           $data = $(data);
+          $data.find('#commentform').addClass('form-stacked'); // [todo] see below
           $('#primary').fadeOut(200, function() {
             $(this).replaceWith($data.find('#primary').hide().fadeIn(200))
           })
@@ -117,5 +118,7 @@ jQuery(document).ready(function($){
 /* ---- Weather widget ----- */
   $('#weather').weather();
 
+/* ---- Comment form [TODO] will change when WP gives the option to do so with php ---- */
+  $('#commentform').addClass('form-stacked');
 
 });
