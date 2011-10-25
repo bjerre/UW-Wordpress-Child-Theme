@@ -9,6 +9,9 @@ The UW Advancement theme is branched here since 0.2.0
 
 ## History
 
+### 0.4.1 - Customizable Header
+  - Blog title and description now appear
+
 ### 0.4.0 - Finalized Navigation
   - Page generated and custom menus both functional
   - Added Community Photos widget
