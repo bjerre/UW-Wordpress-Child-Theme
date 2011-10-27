@@ -3,8 +3,8 @@ Theme Name:     UW Wordpress Theme
 Theme URI:      http: //example.com/
 Description:    UW branded child theme based on the Twenty Eleven theme 
 Author:         UW Web Team
-Author URI:     http: //example.com/about/
-Version:        0.4.1
+Author URI:     blogs.uw.edu
+Version:        0.4.2
 */
 
 /* override bootstrap */
@@ -12,7 +12,7 @@ h1 a, h1, .entry-title, .entry-title a {
     color: #39275B;
     font-weight: normal;
     letter-spacing: -0.04em;
-    font: 30px/18px "Lucida Grande","Lucida Sans Unicode",Helvetica,Arial,Verdana,sans-serif;
+    font: 30px/26px "Lucida Grande","Lucida Sans Unicode",Helvetica,Arial,Verdana,sans-serif;
 }
 #leftNav a:hover {
     color: #999999;
@@ -125,9 +125,13 @@ h3.assistive-text {
 	text-align: left;
 	top:0;
 }
+#content {
+}
 #slider {
-  position: relative;
   margin-top: 52px;
+}
+#slider .sliding {
+  float:left;
 }
  /* Begin UW Theme CSS */
 #leftNav {
