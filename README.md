@@ -9,6 +9,9 @@ The UW Advancement theme is branched here since 0.2.0
 
 ## History
 
+### 0.4.3 - Customizable Header
+  - Bug fix: Blog title and description without banner image
+
 ### 0.4.2 - Customizable Header
   - Bug fix: line-heights for h1
 

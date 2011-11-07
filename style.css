@@ -4,7 +4,7 @@ Theme URI:      http: //example.com/
 Description:    UW branded child theme based on the Twenty Eleven theme 
 Author:         UW Web Team
 Author URI:     blogs.uw.edu
-Version:        0.4.2
+Version:        0.4.3
 */
 
 /* override bootstrap */
@@ -200,6 +200,16 @@ p.authoring {
 }
 .banner {
 	padding:25px 0 15px 38px;
+}
+.noBanner {
+    display: block;
+    height: 111px;
+}
+.noBanner #site-title {
+    top: 34px;
+}
+.noBanner #site-description {
+    top: 62px;
 }
 #site-description {
     margin: 0;

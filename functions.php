@@ -119,6 +119,21 @@ function uwtheme_setup() {
 }
 endif; // uwtheme_setup 
 
+if ( ! function_exists( 'uwtheme_no_banner_class' ) ) :
+/**
+ * Adds a class noBanner to #header if no banner image is selected
+ *
+ * @since UW Theme 0.4.2
+ */
+  function uwtheme_no_banner_class() {
+
+    $header_image = get_header_image();
+    
+    echo empty( $header_image ) ? ' noBanner ' : '';
+
+  }
+endif;
+
 
 if ( ! function_exists( 'uwtheme_header_style' ) ) :
 /**
