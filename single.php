@@ -22,9 +22,9 @@ get_header(); ?>
 
           <div id="slider">
             <?php get_template_part( 'content', '' ); ?>
-          </div>
 
-					<?php comments_template( '', true ); ?>
+            <?php comments_template( '', true ); ?>
+          </div>
 
 				<?php endwhile; // end of the loop. ?>
 

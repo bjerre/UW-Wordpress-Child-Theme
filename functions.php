@@ -549,7 +549,7 @@ function add_additional_js() {
       'jquery' => '',
       'weather' => 'https://raw.github.com/uweb/jquery.uw/master/src/min/jquery.uw.weather.min.js',
       'site' => 'site.js',
-      'nextprev' => 'nextprev.js',
+      //'nextprev' => 'nextprev.js',
       'modernizr' => 'modernizr.js'
     );
     foreach ($jsfiles as $name => $file) {
