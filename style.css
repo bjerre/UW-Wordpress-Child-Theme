@@ -471,3 +471,8 @@ textarea#comment {
 	padding: 0;
 	float: none;
 }
+
+.dir-form input[type=submit] {
+  padding:3px;
+  margin-top:5px;
+}
