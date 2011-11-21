@@ -9,6 +9,9 @@ The UW Advancement theme is branched here since 0.2.0
 
 ## History
 
+### 0.4.4 - Customizable Header
+  - Buddypress compatibility
+
 ### 0.4.3 - Customizable Header
   - Bug fix: Blog title and description without banner image
 
