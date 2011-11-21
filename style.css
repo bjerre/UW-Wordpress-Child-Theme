@@ -454,3 +454,19 @@ textarea#comment {
 #leftNav li.pagenav {
     padding: 0 0 0 20px;
 }
+
+/***************
+ BuddyPress
+***************/
+
+#padder ul {
+	margin: auto;
+}
+ 
+#padder input {
+	width: auto;
+}
+#padder input {
+	padding: 0;
+	float: none;
+}
