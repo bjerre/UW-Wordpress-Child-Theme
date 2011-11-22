@@ -1,9 +1,9 @@
 @charset "utf-8";
 
 /* overrides bootstrap */
-h4 {
+#header h4 {
   font-size: 12px;
-  line-height: 1.5;
+  line-height: 1.25;
   font-weight: bold;
   font-family:"Lucida Grande","Lucida Sans Unicode",Arial,san-serif;
 }
@@ -196,6 +196,7 @@ ul#navg {
 	margin: 0;
 	color:#fff;
 	float: right;
+	line-height: 17px;
 }
 .tagline a {
 	color: #FFF;

@@ -588,16 +588,15 @@ a:hover {
 .entry-content h2,
 .comment-content h1,
 .comment-content h2 {
-	color: #000;
-	font-weight: bold;
-	margin: 0 0 .8125em;
+	color: #39275B;
+	margin: 1.2em 0 0.4em;
+	font-weight: normal;
 }
 .entry-content h3,
 .comment-content h3 {
-	font-size: 10px;
-	letter-spacing: 0.1em;
+	font-size: 18px;
+	letter-spacing: -0.01em;
 	line-height: 2.6em;
-	text-transform: uppercase;
 }
 .entry-content table,
 .comment-content table {
@@ -614,12 +613,6 @@ a:hover {
 	line-height: 2.6em;
 	text-transform: uppercase;
 }
-.entry-content td,
-.comment-content td {
-	border-top: 1px solid #ddd;
-	padding: 6px 10px 6px 0;
-}
-
 .comment-content ul,
 .comment-content ol {
 	margin-bottom: 1.625em;
