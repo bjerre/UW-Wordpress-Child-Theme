@@ -80,4 +80,3 @@
 
 <?php get_template_part('banner'); ?>
 
-<?php get_template_part('leftnav'); ?>
