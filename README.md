@@ -9,14 +9,14 @@ The UW Advancement theme is branched here since 0.2.0
 
 ## History
 
-### 0.5.2 - Customizable Header
+### 0.5.2 - Page Templates
   - Adding theme screenshot
   - Slight CSS modifications
 
-### 0.5.1 - Customizable Header
+### 0.5.1 - Page Templates
   - Bug fix: left navigation back in blog posts
 
-### 0.5.0 - Customizable Header
+### 0.5.0 - Page Templates
   - Page template for widgets on left side under navigation
   - Better handling of page transitions
   - Removed post transitions - will reimplement in the future
