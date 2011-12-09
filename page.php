@@ -14,8 +14,6 @@
 
 get_header(); ?>
 
-<?php get_template_part('leftnav'); ?>
-
 		<div id="primary">
 			<div id="content" role="main">
 

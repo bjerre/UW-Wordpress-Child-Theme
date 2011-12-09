@@ -8,8 +8,6 @@
  
 get_header(); ?>
 
-<?php get_template_part('leftnav'); ?>
-
 		<div id="primary" class="no-widgets">
 			<div id="content" role="main">
 
