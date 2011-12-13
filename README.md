@@ -9,6 +9,9 @@ The UW Advancement theme is branched here since 0.2.0
 
 ## History
 
+### 0.5.3 - Page Templates
+  - Left navigation in header file for buddypress support
+
 ### 0.5.2 - Page Templates
   - Adding theme screenshot
   - Slight CSS modifications
