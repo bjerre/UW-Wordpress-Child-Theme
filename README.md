@@ -5,8 +5,6 @@
 This theme is the updated UW Wordpress theme.
 The goal is to keep all the new TwentyEleven features while maintaining a branded theme.
 
-The UW Advancement theme is branched here since 0.2.0
-
 ## History
 
 ### 0.6.0 - CSS refactored

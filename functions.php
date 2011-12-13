@@ -341,18 +341,59 @@ add_action( 'widgets_init', 'uwtheme_widgets_init' );
 
 /**
  * Display navigation to next/previous pages when applicable
+ *
+ * @deprecated UW Theme 0.6.0
  */
 function uwtheme_content_nav( $nav_id ) {
 	global $wp_query;
 
 	if ( $wp_query->max_num_pages > 1 ) : ?>
-		<nav id="<?php echo $nav_id; ?>">
+		<nav id="<?php echo $nav_id; ?>" class="navigation">
 			<h3 class="assistive-text"><?php _e( 'Post navigation', 'uwtheme' ); ?></h3>
 			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'uwtheme' ) ); ?></div>
 			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'uwtheme' ) ); ?></div>
 		</nav><!-- #nav-above -->
 	<?php endif;
 }
+
+/**
+ * Display a paginated navigation (replaces uwtheme_content_nav above)
+ *
+ * @since UW Theme 0.6.0
+ */
+function uwtheme_pagination($pages = '', $range = 2) {  
+     global $paged;
+
+     if($pages == '') {
+       global $wp_query;
+       $pages = $wp_query->max_num_pages;
+       if(!$pages) {
+           $pages = 1;
+       }
+     }   
+
+     $showitems = ($range * 2)+1;  
+     $prevclass = ($paged == 1) ? 'disabled' : '';
+     $nextclass = ($paged == $pages) ? 'disabled' : '';
+
+     if(empty($paged)) $paged = 1;
+
+     if(1 != $pages) {
+         echo "<div class='pagination'>";
+         echo "<ul>";
+         echo "<li class='prev $prevclass'><a href='".get_pagenum_link($paged-1)."'>&larr; Previous</a></li>";
+         for ($i=1; $i <= $pages; $i++) {
+           $class = ($i == $paged) ? 'class="active"' : '';
+           if (1 != $pages &&( !($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $showitems )) {
+             echo "<li $class><a href='".get_pagenum_link($i)."'>".$i."</a></li>";
+           }
+         }
+         echo "<li class='next $nextclass'><a href='".get_pagenum_link($paged+1)."'>Next &rarr;</a></li>";
+         echo "</ul>";
+         echo "</div>";
+     }
+}
+
 
 /**
  * Return the URL for the first link found in the post content.
