@@ -9,6 +9,11 @@ The UW Advancement theme is branched here since 0.2.0
 
 ## History
 
+### 0.6.0 - CSS refactored
+  - Begin tagging releases
+  - Fix issue #1 where nested comments were being hidden
+  - Minor bug fixes to UI 
+
 ### 0.5.3 - Page Templates
   - Left navigation in header file for buddypress support
 
