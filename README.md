@@ -5,7 +5,15 @@
 This theme is the updated UW Wordpress theme.
 The goal is to keep all the new TwentyEleven features while maintaining a branded theme.
 
+For the time being the master branch is under heavey development and could potentially be broken.
+It is recommended to clone the repository and then checkout the latest tag.
+
 ## History
+
+### 0.6.1 - CSS refactored
+  - Using test data from wordpress.org to sort out minor bugs
+  - Left widgets area
+  - Paginated post navigation
 
 ### 0.6.0 - CSS refactored
   - Begin tagging releases

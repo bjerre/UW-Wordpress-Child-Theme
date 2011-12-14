@@ -677,7 +677,7 @@ function uwtheme_comment_submit_button($html){
 /**
  * Adds class form-stacked to the password form
  *
- * @since UW Theme 0.6.0
+ * @since UW Theme 0.6.1
  */
 add_filter('the_password_form', 'uwtheme_custom_the_password_form');
 function uwtheme_custom_the_password_form($html) {
