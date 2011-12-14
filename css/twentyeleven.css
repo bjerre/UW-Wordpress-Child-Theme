@@ -66,13 +66,13 @@
 }
 
 /* error404 */
-.error404 #primary {
-	float: none;
-	margin: 0;
-}
+
 .error404 #primary #content {
-	margin: 0 7.6%;
-	width: auto;
+    margin: 335px 0 5%;
+    width: 100%;
+}
+.error404 .screen-reader-text {
+    padding: 0 15px 0 0 ;
 }
 
 /* Alignment */
