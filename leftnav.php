@@ -4,5 +4,8 @@
       <?php wp_nav_menu(array('depth'=>2));?>
 
       <br class="clear" /><br class="clear" />
+
+      <?php get_widgets('left'); ?>
+
     </div>
   </div>

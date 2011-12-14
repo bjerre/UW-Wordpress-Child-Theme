@@ -391,13 +391,13 @@ h2.widgettitle {
 .menu {
 	padding: 0 0 0 20px;
 }
-#secondary {
+#secondary, #left-widgets {
     float: left;
     margin: 20px 0 0;
     padding: 0 0 0 50px;
     width: 161px;
 }
-#leftNav #secondary {
+#leftNav #secondary, #leftNav #left-widgets {
     overflow: hidden;
     width: 165px;
 }

@@ -336,6 +336,15 @@ function uwtheme_widgets_init() {
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	) );
+
+	register_sidebar( array(
+		'name' => __( 'Left Widgets', 'uwtheme' ),
+		'id' => 'sidebar-2',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget' => "</aside>",
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
 }
 add_action( 'widgets_init', 'uwtheme_widgets_init' );
 
@@ -603,10 +612,16 @@ function add_additional_js() {
  *   only echos out widgets if there are active widgets
  */
 
-function get_widgets() {
-  if ( is_active_sidebar( 'sidebar-1' ) ){
+function get_widgets($side='right') {
+  if ( is_active_sidebar( 'sidebar-1' ) && $side == 'right' ){
     get_sidebar();
   }
+  if ( is_active_sidebar( 'sidebar-2' ) && $side == 'left' ){
+    get_sidebar('left');
+  }
+}
+
+function get_left_widgets() {
 }
 
 

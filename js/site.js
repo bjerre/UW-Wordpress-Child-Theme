@@ -14,12 +14,6 @@ jQuery(document).ready(function($){
 
           $('#primary').replaceWith($data.find('#primary').hide().fadeIn(200))
           
-          if($data.find('#leftNav').find('#secondary').length !== 0) {
-            $('#leftNav .leftNavBackground').append($data.find('#secondary').hide().fadeIn(200));
-          } else {
-            $('#leftNav').find('#secondary').remove();
-          }
-
           var old_img = $('a.banner').children('img');
           var new_img = $data.find('a.banner').children('img').hide();
 

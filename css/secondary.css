@@ -329,21 +329,21 @@ h3.greyItal i {
 .allPages {
 	padding-bottom: 30px;
 }
-#secondary ul, #primary {
+#secondary ul, #primary, #left-widgets ul {
 	margin: 0 0 1.5em;
 	list-style: none;
 }
-#secondary li, #primary {
+#secondary li, #primary, #left-widgets li {
 	margin: 0 25px 4px 0;
 	padding: 1px 0 1px 10px;
 	line-height: 15px;
 	background: url(../images/arrow_small.gif) left 5px no-repeat;
 }
-#secondary ol li, #primary {
+#secondary ol li, #primary, #left-widgets ol li{
 	padding:0;
 	background:none;
 }
-#secondary li, #primary {
+#secondary li, #primary, #left-widgets li {
 	margin: 0 8px 4px 0;
 	line-height: 16px;
 	background-position:left 5px;
