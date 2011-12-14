@@ -63,15 +63,7 @@
     
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 </head>
-  <?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
-
-      <body>
-
-  <?php else: ?>
-
-      <body class="no-widgets">
-
-  <?php endif; ?>
+<body <?php echo body_class();?> >
   
 <?php get_template_part('topnav'); ?>
 

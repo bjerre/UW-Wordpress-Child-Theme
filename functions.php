@@ -540,19 +540,18 @@ endif;
  * @since UW Theme 0.3.0
  */
 function uwtheme_body_classes( $classes ) {
+  global $bp;
 
-	if ( ! is_multi_author() ) {
-		$classes[] = 'single-author';
-	}
+  if ( false == is_active_sidebar( 'sidebar-1' ) ) $classes[] = 'no-widgets';
+  if ( isset($bp) ) $classes[] = 'buddypress';
 
+	if ( ! is_multi_author() ) $classes[] = 'singular-author';
 	if ( is_singular() && ! is_home() && ! is_page_template( 'showcase.php' ) && ! is_page_template( 'sidebar-page.php' ) )
-		$classes[] = 'singular';
+		$classes[] = 'singular-page';
 
 	return $classes;
 }
 add_filter( 'body_class', 'uwtheme_body_classes' );
-
-
 
 
 /****** OLD STUFF *******/
