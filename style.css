@@ -4,7 +4,7 @@ Theme URI:      http: //example.com/
 Description:    UW branded child theme based on the Twenty Eleven theme 
 Author:         UW Web Team
 Author URI:     blogs.uw.edu
-Version:        0.6.1
+Version:        0.6.0
 */
 
 /* override bootstrap */
@@ -387,6 +387,7 @@ h2.widgettitle {
 }
 .leftNavBackground {
     min-height: 200px;
+    overflow: hidden;
 }
 .menu {
 	padding: 0 0 0 20px;
@@ -440,7 +441,7 @@ h2.widgettitle {
 ***************/
 
 #primary.fourOhhhFour {
-	background: url("images/404.jpg") no-repeat center center;
+	background: url("images/404.jpg") no-repeat scroll center 0 transparent;
 	width: 650px;
 	height: 700px;
 }
