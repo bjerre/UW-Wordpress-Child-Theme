@@ -2,7 +2,6 @@ jQuery(document).ready(function($){
 
   $.fn.proxyFade = function() {
     return $(this).each(function() {
-      if ( $('#bp-css').length === 1) return true;
       if(Modernizr.history) {
         event.preventDefault();
         if( this.href == location.href ) return false;
