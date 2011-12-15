@@ -569,6 +569,7 @@ add_filter( 'body_class', 'uwtheme_body_classes' );
  */
 add_action('wp_enqueue_scripts', 'add_additional_css');
 function add_additional_css() {
+    $theme_data = get_theme_data( get_bloginfo('stylesheet_url') );
     $cssfiles = array(
       //'NAME OF FILE' => 'FILENAME ISTELF',
       'bootstrap' => 'bootstrap.min.css',
@@ -580,7 +581,7 @@ function add_additional_css() {
     );
     foreach ($cssfiles as $name => $file) {
       $url = get_stylesheet_directory_uri() . "/css/$file";
-      wp_register_style($name, $url);
+      wp_register_style($name, $url, array(), $theme_data['Version']);
       wp_enqueue_style($name);
     }
 }
@@ -591,6 +592,7 @@ function add_additional_css() {
  */
 add_action('wp_enqueue_scripts', 'add_additional_js');
 function add_additional_js() {
+    $theme_data = get_theme_data( get_bloginfo('stylesheet_url') );
     $jsfiles = array(
       //'NAME OF FILE' => 'FILENAME ISTELF',
       'jquery' => '',
@@ -602,7 +604,7 @@ function add_additional_js() {
     foreach ($jsfiles as $name => $file) {
       if( strlen($file) > 0 ) {
         $url = (strpos($file, 'http') === false) ? get_stylesheet_directory_uri() . "/js/$file" : $file;
-        wp_register_script($name, $url);
+        wp_register_script($name, $url, array(), $theme_data['Version']);
       }
       wp_enqueue_script($name);
     }
