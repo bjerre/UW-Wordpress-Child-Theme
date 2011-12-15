@@ -5,14 +5,14 @@ jQuery(document).ready(function($){
       if(Modernizr.history) {
         event.preventDefault();
         if( this.href == location.href ) return false;
-        $('body').addClass('getting-page');
         history.pushState({ path: this.path }, '', this.href);
+        $('#primary').animate({'opacity':0.4}, 200);
         $.get(this.href, function(data){
-          $('body').removeClass('getting-page');
           $data = $(data);
           $data.find('#commentform').addClass('form-stacked'); // [todo] see below
 
-          $('#primary').replaceWith($data.find('#primary').hide().fadeIn(200))
+          $('#primary').stop().replaceWith($data.find('#primary').hide().fadeIn(200))
+            .css('opacity',1);
           
           var old_img = $('a.banner').children('img');
           var new_img = $data.find('a.banner').children('img').hide();

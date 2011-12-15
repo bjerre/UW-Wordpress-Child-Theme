@@ -564,9 +564,10 @@ add_filter( 'body_class', 'uwtheme_body_classes' );
 
 /**
  * Adds the css files for that are needed on each page 
- *
+ * Need to use wp_enqueue_scripts action for the following reason:
+ *   http://wpdevel.wordpress.com/2011/12/12/use-wp_enqueue_scripts-not-wp_print_styles-to-enqueue-scripts-and-styles-for-the-frontend/
  */
-add_action('wp_print_styles', 'add_additional_css');
+add_action('wp_enqueue_scripts', 'add_additional_css');
 function add_additional_css() {
     $cssfiles = array(
       //'NAME OF FILE' => 'FILENAME ISTELF',
