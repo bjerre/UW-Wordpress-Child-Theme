@@ -5,7 +5,7 @@ jQuery(document).ready(function($){
       if(Modernizr.history) {
         event.preventDefault();
         if( this.href == location.href ) return false;
-        history.pushState({ path: this.path }, '', this.href);
+        history.pushState({ path: this.pathname }, '', this.href);
         $('#primary').animate({'opacity':0.4}, 200);
         $.get(this.href, function(data){
           $data = $(data);
