@@ -541,6 +541,8 @@ function uwtheme_posted_on() {
 }
 endif;
 
+add_filter( 'body_class', 'uwtheme_body_classes' );
+if (!function_exists('uwtheme_body_classes')) :
 /**
  * Adds two classes to the array of body classes.
  * The first is if the site has only had one author with published posts.
@@ -548,6 +550,7 @@ endif;
  *
  * @since UW Theme 0.3.0
  */
+
 function uwtheme_body_classes( $classes ) {
   if ( false == is_active_sidebar( 'sidebar-1' ) ) $classes[] = 'no-widgets';
 
@@ -557,17 +560,20 @@ function uwtheme_body_classes( $classes ) {
 
 	return $classes;
 }
-add_filter( 'body_class', 'uwtheme_body_classes' );
+endif;
 
 
 /****** OLD STUFF *******/
 
+add_action('wp_enqueue_scripts', 'add_additional_css');
+
+if (!function_exists('add_additional_css')) :
 /**
  * Adds the css files for that are needed on each page 
  * Need to use wp_enqueue_scripts action for the following reason:
  *   http://wpdevel.wordpress.com/2011/12/12/use-wp_enqueue_scripts-not-wp_print_styles-to-enqueue-scripts-and-styles-for-the-frontend/
  */
-add_action('wp_enqueue_scripts', 'add_additional_css');
+
 function add_additional_css() {
     $theme_data = get_theme_data( get_bloginfo('stylesheet_url') );
     $cssfiles = array(
@@ -585,12 +591,17 @@ function add_additional_css() {
       wp_enqueue_style($name);
     }
 }
+endif;
 
+add_action('wp_enqueue_scripts', 'add_additional_js');
+
+if (!function_exists('add_additional_js')) :
 /**
  * Adds the javascript files for that are needed on each page 
  *
+ * @since UW Theme 0.1.0
  */
-add_action('wp_enqueue_scripts', 'add_additional_js');
+
 function add_additional_js() {
     $theme_data = get_theme_data( get_bloginfo('stylesheet_url') );
     $jsfiles = array(
@@ -609,7 +620,9 @@ function add_additional_js() {
       wp_enqueue_script($name);
     }
 }
+endif;
 
+if (!function_exists('get_widgets')) :
 /**
  * UW widgets on sidebar 
  *   only echos out widgets if there are active widgets
@@ -623,9 +636,7 @@ function get_widgets($side='right') {
     get_sidebar('left');
   }
 }
-
-function get_left_widgets() {
-}
+endif;
 
 
 /**
@@ -636,10 +647,16 @@ function get_left_widgets() {
 add_filter('comment_form_default_fields', 'uw_form_fields');
 add_filter('comment_form_field_comment',  'uw_form_field_comment');
 add_filter('comment_form', 'uwtheme_comment_submit_button');
+
+if (!function_exists('uw_form_fields')) :
+/**
+ * Outputs the comment form to be compatible with Bootstrap
+ *
+ * @since UW Theme 0.1.0
+ */
+
 function uw_form_fields($fields) {
-
   $commenter = wp_get_current_commenter();
-
   $fields =  array(
     'author'  => '<div class="clearfix required">' . '<label for="author">' . __( 'Name' ) . '</label> ' . '<div class="input">' . 
                    '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' />' .
@@ -654,7 +671,14 @@ function uw_form_fields($fields) {
   
   return $fields;
 }
+endif;
 
+if (!function_exists('uw_form_field_comment')) :
+/**
+ * Wraps the comment button to work with Bootstrap CSS
+ *
+ * @since UW Theme 0.1.0
+ */
 function uw_form_field_comment($comment_field) {
   $comment_field = "
           <div class='clearfix'>
@@ -667,6 +691,14 @@ function uw_form_field_comment($comment_field) {
     
   return $comment_field;
 }
+endif;
+
+if (!function_exists('uwtheme_comment_submit_button')) :
+/**
+ * Wraps the comment button to work with Bootstrap CSS
+ *
+ * @since UW Theme 0.3.0
+ */
 
 function uwtheme_comment_submit_button($html){
 
@@ -676,7 +708,9 @@ function uwtheme_comment_submit_button($html){
           </div>
   ";
 }
+endif;
 
+if (!function_exists('uwtheme_custom_the_password_form')) :
 /**
  * Adds class form-stacked to the password form
  *
@@ -686,6 +720,7 @@ add_filter('the_password_form', 'uwtheme_custom_the_password_form');
 function uwtheme_custom_the_password_form($html) {
   return str_replace('<form', '<form class="form-stacked"', $html);
 }
+endif;
 
 /**
  * Register Widgets
@@ -694,13 +729,13 @@ function uwtheme_custom_the_password_form($html) {
 include_once('widgets/communityphotos.php');
 //include_once('widgets/uwmap.php');
 
+if (!function_exists('get_uw_dropdowns')) {
 /**
  * Grabs the dropdown navigation off of http://uw.edu (UW Homepage)
  * after a certain amount of time has passed and stores it in the database. 
  *
  * @return The navigation HTML
  */ 
-if (!function_exists('get_uw_dropdowns')) {
     function get_uw_dropdowns() {
 
         // check if we need to update the dropdowns from the UW homepage
@@ -714,10 +749,10 @@ if (!function_exists('get_uw_dropdowns')) {
     }
 }
 
+if (!function_exists('uw_dropdowns')) {
 /**
  * Echos out the navigation HTML
  */ 
-if (!function_exists('uw_dropdowns')) {
     function uw_dropdowns() {
         echo get_uw_dropdowns();
     }

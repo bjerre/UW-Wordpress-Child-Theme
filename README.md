@@ -10,6 +10,10 @@ It is recommended to clone the repository and then checkout the latest tag.
 
 ## History
 
+### 0.7.0 - Code Clean Up
+  - Child theme compatible
+  - Code clean up
+
 ### 0.6.7 - Javascript Bug Fix
   - Bug fix for the History API on compatible browsers
 
