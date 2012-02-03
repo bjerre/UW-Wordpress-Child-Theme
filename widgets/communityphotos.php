@@ -6,6 +6,10 @@ class CommunityPhotos extends WP_Widget {
 	function CommunityPhotos() {
 		// widget actual processes
 		parent::WP_Widget( $id = 'community_photos', $name = get_class($this), $options = array( 'description' => 'UW Community Photos' ) );
+    if ( is_active_widget(false, false, $this->id_base) ) {
+      add_action( 'wp_head', array(&$this, 'load_css') );
+    }
+
 	}
 	function form($instance) {
 		// outputs the options form on admin
@@ -46,12 +50,11 @@ class CommunityPhotos extends WP_Widget {
       echo $before_widget . $content . $after_widget;
     }
 	}
+  function load_css() {
+      wp_register_style( 'communityphotos', get_bloginfo('template_url') . '/widgets/communityphotos.css' );
+      wp_enqueue_style( 'communityphotos' );
+  }
 }
-add_action( 'widgets_init', 'load_community_photos' );
-function load_community_photos() {
-    register_widget( 'CommunityPhotos' );
-    wp_register_style( 'communityphotos', get_stylesheet_directory_uri() . '/widgets/communityphotos.css' );
-    wp_enqueue_style( 'communityphotos' );
-}
+register_widget( 'CommunityPhotos' );
 
 ?>

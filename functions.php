@@ -107,7 +107,7 @@ function uwtheme_setup() {
 	// ... and thus ends the changeable header business.
 
 	// Default custom headers packaged with the theme. %s is a placeholder for the theme template directory URI.
-  $template_uri = get_stylesheet_directory_uri();
+  $template_uri = get_bloginfo('template_url');
 	register_default_headers( array(
     'huskypromise' => array(
       'url' => "$template_uri/images/banners/banner.jpg",
@@ -580,7 +580,7 @@ function add_additional_css() {
       'reveal'    => 'reveal.css'
     );
     foreach ($cssfiles as $name => $file) {
-      $url = get_stylesheet_directory_uri() . "/css/$file";
+      $url = get_bloginfo('template_url') . "/css/$file";
       wp_register_style($name, $url, array(), $theme_data['Version']);
       wp_enqueue_style($name);
     }
@@ -603,7 +603,7 @@ function add_additional_js() {
     );
     foreach ($jsfiles as $name => $file) {
       if( strlen($file) > 0 ) {
-        $url = (strpos($file, 'http') === false) ? get_stylesheet_directory_uri() . "/js/$file" : $file;
+        $url = (strpos($file, 'http') === false) ? get_bloginfo('template_url') . "/js/$file" : $file;
         wp_register_script($name, $url, array(), $theme_data['Version']);
       }
       wp_enqueue_script($name);
