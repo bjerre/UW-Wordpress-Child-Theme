@@ -10,7 +10,7 @@ It is recommended to clone the repository and then checkout the latest tag.
 
 ## History
 
-### 0.6.5 - CSS refactored
+### 0.6.6 - CSS refactored
   - Only loading Community Photos widget CSS when the widget is in use
   - Replaced get_stylesheet_directory_uri with get_bloginfo('template_url')
     for child themes using this theme as a parent.
