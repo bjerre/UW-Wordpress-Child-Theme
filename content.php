@@ -8,6 +8,10 @@
  */
 ?>
 
+
+<!-- use a font like the recommended Goudy font for page content -->
+<link href='http://fonts.googleapis.com/css?family=Sorts+Mill+Goudy:400,400italic|Goudy+Bookletter+1911' rel='stylesheet' type='text/css'>
+
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
   <header class="entry-header">
     <?php if ( is_sticky() ) : ?>
@@ -25,7 +29,7 @@
     </div><!-- .entry-meta -->
     <?php endif; ?>
 
-    <?php if ( comments_open() && ! post_password_required() ) : ?>
+    <?php if ( comments_open() && ! post_password_required() && ! is_page() ) : ?>
     <div class="comments-link">
       <?php comments_popup_link( '<span class="leave-reply">' . __( 'Reply', 'uwtheme' ) . '</span>', _x( '1', 'comments number', 'uwtheme' ), _x( '%', 'comments number', 'uwtheme' ) ); ?>
     </div>
@@ -70,7 +74,7 @@
     <?php endif; // End if $tags_list ?>
     <?php endif; // End if 'post' == get_post_type() ?>
 
-    <?php if ( comments_open() ) : ?>
+    <?php if ( comments_open() && !is_page() ) : ?>
     <?php if ( $show_sep ) : ?>
     <span class="sep"> | </span>
     <?php endif; // End if $show_sep ?>

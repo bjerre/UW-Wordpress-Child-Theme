@@ -21,7 +21,8 @@ get_header(); ?>
 
 				<?php get_template_part( 'content', '' ); ?>
 
-				<?php comments_template( '', true ); ?>
+				<?php /*comments_template( '', true );*/ ?>
+			
 
 			</div><!-- #content -->
       <?php get_widgets(); ?>

@@ -93,6 +93,7 @@ input.wTextInput {
 /* override twentyeleven css */
 
 #content {
+  font-family: font-family: 'Goudy Bookletter 1911', serif;
   margin: 0;
   width: 100%;
 }
