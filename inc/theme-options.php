@@ -207,6 +207,7 @@ function uwtheme_theme_options_render_page() {
 			<?php submit_button(); ?>
 		</form>
 	</div>
+
 	<?php
 }
 
