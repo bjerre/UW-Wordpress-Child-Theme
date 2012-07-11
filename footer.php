@@ -10,12 +10,14 @@
 <div id="footerMain">
   <div id="footerLeft">    	
 		<ul>
-   		  <li class="centerText"><a href="http://www.washington.edu/">&#169; <?php echo date('Y'); ?> UNIVERSITY OF WASHINGTON</a></li>  
+   		  <li class="centerText"><a href="http://www.washington.edu/">&#169; <?php echo date('Y'); ?> UNIVERSITY OF WASHINGTON</a>
+		    <!-- <a href="http://www.seattle.gov/">SEATTLE, WASHINGTON</a>-->
+		  </li>  
         </ul>
   </div>    
     <div id="footerRight">  
     	 <ul>  	
-  		   <li class="centerText"><a href="http://www.seattle.gov/">SEATTLE, WASHINGTON</a></li>
+  		   <li class="centerText"><a href="<?php echo get_admin_url(); ?>">PREP site login</a></li>
          </ul>   
   </div>    
   	<div id="footerCenter">

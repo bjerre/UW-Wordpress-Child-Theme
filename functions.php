@@ -786,4 +786,53 @@ if (!function_exists('uw_dropdowns_need_updating')) {
     }
 }
 
+
+/*
+ new functions
+ @author:bjerre
+*/
+
+
+if (!function_exists("get_uwtheme_image")){
+/**
+ * get a relative url to a theme associated image
+ *
+ * @return relative url to image
+ */
+
+    function get_uwtheme_image($filename)
+    {
+      $path = get_stylesheet_directory()."/images/".$filename;
+      return $path;
+    }
+}
+
+if (!function_exists('get_synd_footer')){
+/**
+ * function gets a custom footer providing some access links. This is meant to be placed within a pages
+ * primary <div />.
+ * 
+ */
+   function get_synd_footer()
+   {
+   ?>
+     <div id='synd_footer'>
+       <ul>
+    <?php
+    /* if this is a page showing a particular category display and RSS link for that category */
+    if (is_archive()){
+     ?>
+	 <li>
+	   <a href="<?php get_the_category_rss();?>">rss<img src="<?php echo get_uwtheme_image('feed-icon-32x32.png'); ?>" /></a>
+	 </li>
+    <?php
+     }
+    ?>
+	 <li><a href="<?php echo get_admin_url();?>">administer site</a></li>
+       </ul>
+     </div>
+   <?php
+   }
+}
+
 ?>

@@ -23,9 +23,9 @@ get_header(); ?>
 
 				<?php /*comments_template( '', true );*/ ?>
 			
-
 			</div><!-- #content -->
-      <?php get_widgets(); ?>
+     			<?php get_widgets(); ?>
+			<?php get_synd_footer(); ?>
 		</div><!-- #primary -->
 
 <?php get_footer(); ?>

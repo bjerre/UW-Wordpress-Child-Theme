@@ -74,6 +74,7 @@ input.wTextInput {
 	background-image:linear-gradient(top, #674DAD, #56477F);
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#674DAD', endColorstr='#56477F', GradientType=0);
 }
+
 .actions {
     background: none;
     border-top: 0 none;
@@ -481,19 +482,51 @@ textarea#comment {
 ***************/
 
 .padder ul {
-	margin: auto;
+    margin: auto;
 }
  
 .padder input {
-	width: auto;
+    width: auto;
 }
 
 .padder input {
-	padding: 0;
-	float: none;
+    padding: 0;
+    float: none;
 }
 
 .dir-form input[type=submit] {
-  padding:3px;
-  margin-top:5px;
+    padding:3px;
+    margin-top:5px;
+}
+
+/***************
+ modifation candidates to UW theme
+***************/
+
+div#synd_footer{
+    margin: 10px;
+    margin-right: 35px;
+    position: absolute;
+      height: auto;
+      width: auto;
+      right: 0%;
+      left: 0%;
+      top: auto;
+      bottom: 0%;
+}
+
+#synd_footer ul{
+    list-style-type: none;
+    /* list_style_image: none; */
+    margin: 0;
+    padding: 0;
+}
+
+#synd_footer li{
+    float: right;
+    padding-left: 10px;
+}
+
+#synd_footer a{
+    text-decoration: none;
 }
