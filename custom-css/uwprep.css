@@ -1,0 +1,26 @@
+/**
+ * Styles for use throughout website.
+ */
+
+div#content {
+    font-family: 'Sorts Mill Goudy', serif;
+}
+
+/**
+ * Styles for use on Participating Faculty page
+ */
+
+/*
+  ul .fac_res_descript {font-style: italic; margin-left: auto;}
+*/
+
+ul.deflist li {list-style-type: none; 
+	       padding-left: 25px; 
+	       text-indent: -25px;
+	       font-style: italic;
+	      }
+
+ul .prof {
+    font-weight: bold; 
+    font-style: normal;
+    }
